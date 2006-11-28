@@ -15,6 +15,7 @@
   <modules>
     <module>apache-jar-resource-bundle</module>
     <module>apache-license-header-resource-bundle</module>
+    <module>apache-incubator-disclaimer-resource-bundle</module>         
   </modules>
   <build>
     <plugins>
