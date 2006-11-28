@@ -16,4 +16,19 @@
     <module>apache-jar-resource-bundle</module>
     <module>apache-license-header-resource-bundle</module>
   </modules>
+  <build>
+    <plugins>
+      <!-- Turn this into a lifecycle -->
+      <plugin>      
+        <artifactId>maven-remote-resources-plugin</artifactId>        
+        <executions>
+          <execution>
+            <goals>
+              <goal>bundle</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
