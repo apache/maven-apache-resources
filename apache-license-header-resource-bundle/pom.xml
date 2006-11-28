@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.apache</groupId>
-    <artifactId>apache-remote-resources</artifactId>
+    <artifactId>apache-resource-bundles</artifactId>
     <version>1-SNAPSHOT</version>
   </parent>
   <artifactId>apache-license-header-resource-bundle</artifactId>

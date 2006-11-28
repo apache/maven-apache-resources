@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.apache</groupId>
-    <artifactId>apache-remote-resources</artifactId>
+    <artifactId>apache-resource-bundles</artifactId>
     <version>1-SNAPSHOT</version>
   </parent>
-  <artifactId>apache-distribution-resources</artifactId>
-  <name>Apache Distribution Resources</name>
+  <artifactId>apache-jar-resource-bundle</artifactId>
+  <name>Apache JAR Resource Bundle</name>
   <version>1.0-SNAPSHOT</version>
   <inceptionYear>2006</inceptionYear>
   <description>

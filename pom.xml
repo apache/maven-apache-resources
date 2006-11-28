@@ -8,12 +8,12 @@
     <relativePath>../asf/pom.xml</relativePath>                                                                                                                         
   </parent>
   <packaging>pom</packaging>
-  <artifactId>apache-remote-resources</artifactId>
-  <name>Apache Remote Resources</name>
+  <artifactId>apache-resource-bundles</artifactId>
+  <name>Apache Resource Bundles</name>
   <version>1-SNAPSHOT</version>
   <inceptionYear>2006</inceptionYear>
   <modules>
     <module>apache-jar-resource-bundle</module>
-    <module>apache-license-resource-bundle</module>    
+    <module>apache-license-header-resource-bundle</module>
   </modules>
 </project>
