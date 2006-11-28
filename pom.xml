@@ -13,6 +13,7 @@
   <version>1-SNAPSHOT</version>
   <inceptionYear>2006</inceptionYear>
   <modules>
-    <module>apache-distribution-resources</module>
+    <module>apache-jar-resource-bundle</module>
+    <module>apache-license-resource-bundle</module>    
   </modules>
 </project>
