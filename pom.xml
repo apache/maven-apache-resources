@@ -17,6 +17,11 @@
     <module>apache-license-header-resource-bundle</module>
     <module>apache-incubator-disclaimer-resource-bundle</module>         
   </modules>
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk/</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/</url>
+  </scm>
   <build>
     <plugins>
       <!-- Turn this into a lifecycle -->
