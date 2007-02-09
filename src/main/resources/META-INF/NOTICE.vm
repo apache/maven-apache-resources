@@ -1,6 +1,6 @@
 // ------------------------------------------------------------------
-// NOTICE file corresponding to the section 4d of The Apache License,                                                                                               
-// Version 2.0, in this case for ${project.name}                                                                                  
+// NOTICE file corresponding to the section 4d of The Apache License,
+// Version 2.0, in this case for ${project.name}
 // ------------------------------------------------------------------
 
 ${project.name}
@@ -10,6 +10,8 @@ This product includes software developed at
 The Apache Software Foundation (http://www.apache.org/).
 
 #foreach ( $project in $projects )
-This product includes software, $project.name, developed by                                                                                                   
-$project.organization.name ($project.organization.url).
+This product includes/uses software, $project.name#if($project.url) ($project.url)#end#if( $project.organization.name ),
+developed by $project.organization.name#end #if( $project.organization.url ) ($project.organization.url)#end
+
+
 #end
