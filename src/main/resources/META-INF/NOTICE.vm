@@ -9,6 +9,11 @@ Copyright ${projectTimespan} The Apache Software Foundation
 This product includes software developed at
 The Apache Software Foundation (http://www.apache.org/).
 
+#if($preProjectText)
+$preProjectText
+#end
+
+#if(!$noProjects)
 #foreach ( $project in $projects )
 This product includes/uses software, $project.name#if($project.url) ($project.url)#end
 #if( $project.organization.name )
@@ -22,3 +27,9 @@ License: $license.name #if ($license.url) ($license.url)#end
 
 
 #end
+#end
+
+#if($postProjectText)
+$postProjectText
+#end
+
