@@ -8,9 +8,15 @@
   </parent>
   <artifactId>apache-jar-resource-bundle</artifactId>
   <name>Apache JAR Resource Bundle</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <inceptionYear>2006</inceptionYear>
   <description>
     An archive which contains templates for generating the necessary license files and notices for all Apache releases.
   </description>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/tags/apache-jar-resource-bundle-1.1</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/tags/apache-jar-resource-bundle-1.1</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/tags/apache-jar-resource-bundle-1.1</url>
+  </scm>
 </project>
