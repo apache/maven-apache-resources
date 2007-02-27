@@ -8,7 +8,7 @@
   </parent>
   <artifactId>apache-jar-resource-bundle</artifactId>
   <name>Apache JAR Resource Bundle</name>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.1.1-SNAPSHOT</version>
   <inceptionYear>2006</inceptionYear>
   <description>
     An archive which contains templates for generating the necessary license files and notices for all Apache releases.

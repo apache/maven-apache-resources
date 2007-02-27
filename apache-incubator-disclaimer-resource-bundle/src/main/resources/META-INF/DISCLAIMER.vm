@@ -1,4 +1,4 @@
-${project.name} is an effort undergoing incubation at the Apache Software 
+#if(${projectName})${projectName}#else${project.name}#end is an effort undergoing incubation at the Apache Software 
 Foundation (ASF), sponsored by the Apache Incubator PMC. 
 
 Incubation is required of all newly accepted projects until a further review 

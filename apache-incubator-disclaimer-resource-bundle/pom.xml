@@ -4,10 +4,10 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache-resource-bundles</artifactId>
-    <version>2-SNAPSHOT</version>
+    <version>1</version>
   </parent>
   <artifactId>apache-incubator-disclaimer-resource-bundle</artifactId>
-  <name>Apache License Header Resource Bundle</name>
+  <name>Apache Incubator Disclaimer Resource Bundle</name>
   <version>1.1-SNAPSHOT</version>
   <inceptionYear>2006</inceptionYear>
   <description>
