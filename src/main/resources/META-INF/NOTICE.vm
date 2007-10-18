@@ -16,12 +16,14 @@ $preProjectText
 This product includes/uses software(s) developed by '$organizationName.name'#if($organizationName.url) ($organizationName.url)#end
 
 #foreach ( $project in $projectsSortedByOrganization.get( $organizationName ) )
-  - $project.name#if ($addVersion)#if($project.version) ($project.version)#end#end#if($project.url) ($project.url)#end
+  - $project.name#if ($addVersion) (version $project.version)#end#if ($addArtifact) ($project.artifact)#end#if($project.url) ($project.url)#end
 #if ($addLicense)#foreach ( $license in $project.licenses)
+
       License: $license.name #if ($license.url) ($license.url)#end
 #end#end
 
 #end
+
 #end
 
 #if($postProjectText)
