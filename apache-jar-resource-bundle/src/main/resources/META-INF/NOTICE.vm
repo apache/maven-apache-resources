@@ -8,27 +8,18 @@
 
 Copyright ${projectTimespan}#if($project.organization.name) $project.organization.name#else The Apache Software Foundation#end
 
-
-This product includes software developed at
-#if($project.organization.name)$project.organization.name ($project.organization.url).#else
-The Apache Software Foundation (http://www.apache.org/).#end
-
 #if($preProjectText)
 $preProjectText
 #end
 
-#if(!$noProjects)
-#foreach ( $project in $projects )
-This product includes/uses software, $project.name#if($project.url) ($project.url)#end
-#if( $project.organization.name )
-,
-developed by $project.organization.name #if( $project.organization.url ) ($project.organization.url)#end
-#end
+#foreach ( $organizationName in $projectsSortedByOrganization.keySet() )
+This product includes/uses software(s) developed by '$organizationName.name'#if($organizationName.url) ($organizationName.url)#end
+
+#foreach ( $project in $projectsSortedByOrganization.get( $organizationName ) )
+  - $project.name#if($project.url) ($project.url)#end
 #if ($addLicense)#foreach ( $license in $project.licenses)
-
-License: $license.name #if ($license.url) ($license.url)#end
+      License: $license.name #if ($license.url) ($license.url)#end
 #end#end
-
 
 #end
 #end
@@ -36,4 +27,3 @@ License: $license.name #if ($license.url) ($license.url)#end
 #if($postProjectText)
 $postProjectText
 #end
-
