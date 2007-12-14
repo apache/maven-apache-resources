@@ -13,7 +13,7 @@ $preProjectText
 #end
 
 #foreach ( $organizationName in $projectsSortedByOrganization.keySet() )
-This product includes/uses software(s) developed by '$organizationName.name'#if($organizationName.url) ($organizationName.url)#end
+This product includes/uses software developed by '$organizationName.name'#if($organizationName.url) ($organizationName.url)#end
 
 #foreach ( $project in $projectsSortedByOrganization.get( $organizationName ) )
   - $project.name#if ($addVersion) (version $project.version)#end#if ($addArtifact) ($project.artifact)#end#if($project.url) ($project.url)#end
