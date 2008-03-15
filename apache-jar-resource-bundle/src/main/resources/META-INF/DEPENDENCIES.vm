@@ -18,10 +18,14 @@
 ##
 ## $Date: 2008-03-09 23:17:06 -0700 (Sun, 09 Mar 2008) $ $Rev: 635446 $
 ##
+#if($preDepListText)
+$preDepListText
+#else
 // ------------------------------------------------------------------
 // Transitive dependencies of this project determined from the
 // maven pom organized by organization.
 // ------------------------------------------------------------------
+#end
 
 #if ($projectName)$projectName#else${project.name}#end
 
@@ -37,3 +41,9 @@ From: '$organizationName.name'#if($organizationName.url) ($organizationName.url)
 #end
 
 #end
+
+
+#if($postDepListText)
+$postDepListText
+#end
+
