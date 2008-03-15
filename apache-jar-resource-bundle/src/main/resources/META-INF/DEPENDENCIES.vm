@@ -25,9 +25,11 @@ $preDepListText
 // Transitive dependencies of this project determined from the
 // maven pom organized by organization.
 // ------------------------------------------------------------------
-#end
 
 #if ($projectName)$projectName#else${project.name}#end
+
+#end
+
 
 #foreach ( $organizationName in $projectsSortedByOrganization.keySet() )
 From: '$organizationName.name'#if($organizationName.url) ($organizationName.url)#end
