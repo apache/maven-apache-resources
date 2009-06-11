@@ -21,15 +21,19 @@
 <assembly>
   <id>source-release</id>
   <formats>
-    <format>tar.gz</format>
     <format>zip</format>
   </formats>
   <fileSets>
     <fileSet>
-      <directory>${project.basedir}</directory>
+      <directory>.</directory>
+      <outputDirectory>/</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
       <excludes>
-        <exclude>**/${project.build.directory}/**</exclude>
+        <exclude>%regex[(?!.*src/).*target.*]</exclude>
+        <exclude>**/.settings/**</exclude>
+        <exclude>**/.project</exclude>
+        <exclude>**/.classpath</exclude>
+        <exclude>**/cobertura.ser</exclude>
       </excludes>
     </fileSet>
   </fileSets>
