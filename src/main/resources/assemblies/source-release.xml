@@ -46,16 +46,20 @@
         -->
              
         <!-- IDEs -->
-        <exclude>**/.settings/**</exclude>
+        <exclude>**/maven-eclipse.xml</exclude>
         <exclude>**/.project</exclude>
         <exclude>**/.classpath</exclude>
-        <exclude>**/.externalToolBuilders/**</exclude>
-        <exclude>**/maven-eclipse.xml</exclude>
-        <exclude>**/.deployables/**</exclude>
-        <exclude>**/.wtpmodules/**</exclude>
         <exclude>**/*.iws</exclude>
         <exclude>**/*.ipr</exclude>
         <exclude>**/*.iml</exclude>
+        <exclude>**/.settings</exclude>
+        <exclude>**/.settings/**</exclude>
+        <exclude>**/.externalToolBuilders</exclude>
+        <exclude>**/.externalToolBuilders/**</exclude>
+        <exclude>**/.deployables</exclude>
+        <exclude>**/.deployables/**</exclude>
+        <exclude>**/.wtpmodules</exclude>
+        <exclude>**/.wtpmodules/**</exclude>
         <!-- misc -->
         <exclude>**/cobertura.ser</exclude>
         <exclude>**/*.bak</exclude>
