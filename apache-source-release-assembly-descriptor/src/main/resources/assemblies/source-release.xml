@@ -60,12 +60,10 @@
         <exclude>**/.deployables/**</exclude>
         <exclude>**/.wtpmodules</exclude>
         <exclude>**/.wtpmodules/**</exclude>
+        
         <!-- misc -->
         <exclude>**/cobertura.ser</exclude>
-        <exclude>**/*.bak</exclude>
-        <exclude>**/*.diff</exclude>
-        <exclude>**/*.patch</exclude>
-        <exclude>**/*.log</exclude>
+        
         <!-- release-plugin temp files -->
         <exclude>**/pom.xml.releaseBackup</exclude>
         <exclude>**/release.properties</exclude>        
