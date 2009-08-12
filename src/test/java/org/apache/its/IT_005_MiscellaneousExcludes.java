@@ -41,28 +41,11 @@ public class IT_005_MiscellaneousExcludes
         
         Set<String> banned = new HashSet<String>();
         
-        banned.add( archivePathFromProject( BASENAME, VERSION, "/.classpath" ) );
-        banned.add( archivePathFromProject( BASENAME, VERSION, "/.project" ) );
-        banned.add( archivePathFromProject( BASENAME, VERSION, "/maven-eclipse.xml" ) );
-        banned.add( archivePathFromProject( BASENAME, VERSION, "/ide-excludes.iml" ) );
-        banned.add( archivePathFromProject( BASENAME, VERSION, "/ide-excludes.ipr" ) );
-        banned.add( archivePathFromProject( BASENAME, VERSION, "/ide-excludes.iws" ) );
-        banned.add( archivePathFromProject( BASENAME, VERSION, "/.deployables" ) );
-        banned.add( archivePathFromProject( BASENAME, VERSION, "/.settings" ) );
-        banned.add( archivePathFromProject( BASENAME, VERSION, "/.wtpmodules" ) );
-        banned.add( archivePathFromProject( BASENAME, VERSION, "/.externalToolBuilders" ) );
+        banned.add( archivePathFromProject( BASENAME, VERSION, "/cobertura.ser" ) );
+        banned.add( archivePathFromProject( BASENAME, VERSION, "/release.properties" ) );
+        banned.add( archivePathFromProject( BASENAME, VERSION, "/pom.xml.releaseBackup" ) );
         
-        banned.add( archivePathFromChild( BASENAME, VERSION, "child1", "/.classpath" ) );
-        banned.add( archivePathFromChild( BASENAME, VERSION, "child1", "/.project" ) );
-        banned.add( archivePathFromChild( BASENAME, VERSION, "child1", "/maven-eclipse.xml" ) );
-        banned.add( archivePathFromChild( BASENAME, VERSION, "child1", "/.deployables" ) );
-        banned.add( archivePathFromChild( BASENAME, VERSION, "child1", "/.settings" ) );
-        banned.add( archivePathFromChild( BASENAME, VERSION, "child1", "/.wtpmodules" ) );
-        banned.add( archivePathFromChild( BASENAME, VERSION, "child1", "/.externalToolBuilders" ) );
-        
-        banned.add( archivePathFromChild( BASENAME, VERSION, "child2", "/ide-excludes-child2.iml" ) );
-        banned.add( archivePathFromChild( BASENAME, VERSION, "child2", "/ide-excludes-child2.ipr" ) );
-        banned.add( archivePathFromChild( BASENAME, VERSION, "child2", "/ide-excludes-child2.iws" ) );
+        banned.add( archivePathFromChild( BASENAME, VERSION, "child2", "/cobertura.ser" ) );
         
         assertZipContents( required, banned, assembly );
     }
