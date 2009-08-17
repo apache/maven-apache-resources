@@ -29,7 +29,7 @@
     <relativePath>../pom/maven/pom.xml</relativePath>
   </parent>
 
-  <groupId>org.apache</groupId>
+  <groupId>org.apache.apache.resources</groupId>
   <artifactId>apache-resource-bundles</artifactId>
   <version>3-SNAPSHOT</version>
   <packaging>pom</packaging>
