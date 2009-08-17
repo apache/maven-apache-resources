@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.apache.maven</groupId>
     <artifactId>maven-parent</artifactId>
-    <version>11-SNAPSHOT</version>
+    <version>12</version>
     <relativePath>../pom/maven/pom.xml</relativePath>
   </parent>
 
@@ -41,6 +41,7 @@
     <module>apache-jar-resource-bundle</module>
     <module>apache-license-header-resource-bundle</module>
     <module>apache-incubator-disclaimer-resource-bundle</module>         
+    <module>apache-source-release-assembly-descriptor</module>
   </modules>
 
   <scm>
