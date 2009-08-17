@@ -31,7 +31,7 @@
 
   <groupId>org.apache.apache.resources</groupId>
   <artifactId>apache-resource-bundles</artifactId>
-  <version>3</version>
+  <version>4-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Apache Resource Bundles</name>
