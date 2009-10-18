@@ -18,7 +18,7 @@
         
         <dependencies>
           <dependency>
-            <groupId>org.apache</groupId>
+            <groupId>org.apache.apache.resources</groupId>
             <artifactId>apache-source-release-assembly-descriptor</artifactId>
             <version>@project.version@</version>
           </dependency>
