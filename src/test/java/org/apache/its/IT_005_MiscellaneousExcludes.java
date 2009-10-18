@@ -19,7 +19,7 @@ import java.util.Set;
 public class IT_005_MiscellaneousExcludes
 {
     
-    private static final String BASENAME = "shared-resources";
+    private static final String BASENAME = "misc-excludes";
     private static final String VERSION = "1";
     
     @Test
