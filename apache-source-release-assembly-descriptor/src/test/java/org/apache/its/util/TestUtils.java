@@ -23,10 +23,7 @@ public class TestUtils
             childPath = "/" + childPath;
         }
         
-        return ( artifactId + "-" + version + "/" + artifactId + "-" + childName + childPath ).replace( '\\',
-                                                                                                  File.separatorChar )
-                                                                                        .replace( '/',
-                                                                                                  File.separatorChar );
+        return ( artifactId + "-" + version + "/" + artifactId + "-" + childName + childPath );
     }
 
     public static String archivePathFromProject( String artifactId, String version, String path )
@@ -36,7 +33,7 @@ public class TestUtils
             path = "/" + path;
         }
         
-        return ( artifactId + "-" + version + path ).replace( '\\', File.separatorChar ).replace( '/', File.separatorChar );
+        return ( artifactId + "-" + version + path );
     }
 
 //    @SuppressWarnings( "unchecked" )
@@ -71,6 +68,8 @@ public class TestUtils
                 banViolations.add( name );
             }
         }
+
+        zf.close();
 
         if ( !missing.isEmpty() || !banViolations.isEmpty() )
         {
