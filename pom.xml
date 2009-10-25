@@ -9,7 +9,7 @@
   
   <artifactId>apache-source-release-assembly-descriptor</artifactId>
   <packaging>jar</packaging>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   
   <name>Apache Source Release Assembly Descriptor</name>
   <description>
