@@ -9,7 +9,7 @@
   
   <artifactId>apache-source-release-assembly-descriptor</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   
   <name>Apache Source Release Assembly Descriptor</name>
   <description>
@@ -207,4 +207,10 @@
       </build>
     </profile>
   </profiles>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/tags/apache-source-release-assembly-descriptor-1.0.1</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/tags/apache-source-release-assembly-descriptor-1.0.1</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/tags/apache-source-release-assembly-descriptor-1.0.1</url>
+  </scm>
 </project>
