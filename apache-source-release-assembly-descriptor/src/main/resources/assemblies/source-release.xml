@@ -46,27 +46,23 @@
         -->
              
         <!-- IDEs -->
-        <exclude>**/maven-eclipse.xml</exclude>
-        <exclude>**/.project</exclude>
-        <exclude>**/.classpath</exclude>
-        <exclude>**/*.iws</exclude>
-        <exclude>**/*.ipr</exclude>
-        <exclude>**/*.iml</exclude>
-        <exclude>**/.settings</exclude>
-        <exclude>**/.settings/**</exclude>
-        <exclude>**/.externalToolBuilders</exclude>
-        <exclude>**/.externalToolBuilders/**</exclude>
-        <exclude>**/.deployables</exclude>
-        <exclude>**/.deployables/**</exclude>
-        <exclude>**/.wtpmodules</exclude>
-        <exclude>**/.wtpmodules/**</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?maven-eclipse\.xml]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.project]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.classpath]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?[^/]*\.iws]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?[^/]*\.ipr]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?[^/]*\.iml]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.settings(/.*)?]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.externalToolBuilders(/.*)?]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.deployables(/.*)?]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.wtpmodules(/.*)?]</exclude>
         
         <!-- misc -->
-        <exclude>**/cobertura.ser</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?cobertura\.ser]</exclude>
         
         <!-- release-plugin temp files -->
-        <exclude>**/pom.xml.releaseBackup</exclude>
-        <exclude>**/release.properties</exclude>        
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?pom\.xml\.releaseBackup]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?release\.properties]</exclude>
       </excludes>
     </fileSet>
     <!-- license, readme, etc. calculated at build time -->
