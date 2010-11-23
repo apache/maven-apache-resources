@@ -59,6 +59,12 @@ under the License.
       <version>1.5.8</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-verifier</artifactId>
+      <version>1.2</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -176,15 +182,6 @@ under the License.
     </profile>
     <profile>
       <id>run-its</id>
-      
-      <dependencies>
-        <dependency>
-          <groupId>org.apache.maven.shared</groupId>
-          <artifactId>maven-verifier</artifactId>
-          <version>1.2</version>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
       
       <build>
         <plugins>
