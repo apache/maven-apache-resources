@@ -30,7 +30,7 @@ under the License.
   
   <artifactId>apache-source-release-assembly-descriptor</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.4-SNAPSHOT</version>
   
   <name>Apache Source Release Assembly Descriptor</name>
   <description>
@@ -176,7 +176,7 @@ under the License.
                 <configuration>
                   <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
                   <descriptors>
-                    <descriptor>src/main/resources/assemblies/source-release.xml</descriptor>
+                    <descriptor>src/main/assemblies/source-release.xml</descriptor>
                   </descriptors>
                   <tarLongFileFormat>gnu</tarLongFileFormat>
                 </configuration>
