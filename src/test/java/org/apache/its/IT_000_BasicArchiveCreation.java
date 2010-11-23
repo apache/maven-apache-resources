@@ -35,6 +35,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import junit.framework.Assert;
+
 public class IT_000_BasicArchiveCreation
 {
     
@@ -53,6 +55,10 @@ public class IT_000_BasicArchiveCreation
         
         verifier.verifyErrorFreeLog();
         verifier.resetStreams();
+        
+       // make sure the tar did NOT get created by default
+        File tarAssemblyFile = new File( testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.tar.gz" );
+        Assert.assertFalse( "tar assembly should not have been created", tarAssemblyFile.exists() );
         
         File assembly = new File( testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip" );
         
