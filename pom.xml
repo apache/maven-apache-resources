@@ -30,7 +30,7 @@ under the License.
   
   <artifactId>apache-source-release-assembly-descriptor</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.3</version>
+  <version>1.0.4-SNAPSHOT</version>
   
   <name>Apache Source Release Assembly Descriptor</name>
   <description>
@@ -231,10 +231,4 @@ under the License.
       </build>
     </profile>
   </profiles>
-
-  <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/tags/apache-source-release-assembly-descriptor-1.0.3</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/tags/apache-source-release-assembly-descriptor-1.0.3</developerConnection>
-    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/tags/apache-source-release-assembly-descriptor-1.0.3</url>
-  </scm>
 </project>
