@@ -30,7 +30,7 @@ under the License.
   
   <artifactId>apache-source-release-assembly-descriptor</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.4-SNAPSHOT</version>
+  <version>1.0.3-SNAPSHOT</version>
   
   <name>Apache Source Release Assembly Descriptor</name>
   <description>
