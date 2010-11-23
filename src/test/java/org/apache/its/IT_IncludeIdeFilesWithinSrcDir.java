@@ -66,10 +66,10 @@ public class IT_IncludeIdeFilesWithinSrcDir
         required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/ide-excludes.iml" ) );
         required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/ide-excludes.ipr" ) );
         required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/ide-excludes.iws" ) );
-        required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/.deployables" ) );
-        required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/.settings" ) );
-        required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/.wtpmodules" ) );
-        required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/.externalToolBuilders" ) );
+        required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/.deployables/" ) );
+        required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/.settings/" ) );
+        required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/.wtpmodules/" ) );
+        required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/.externalToolBuilders/" ) );
 
         required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/release.properties" ) );
         required.add( archivePathFromProject( BASENAME, VERSION, "/src/test/resources/pom.xml.releaseBackup" ) );
@@ -80,10 +80,10 @@ public class IT_IncludeIdeFilesWithinSrcDir
         required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/ide-excludes.iml" ) );
         required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/ide-excludes.ipr" ) );
         required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/ide-excludes.iws" ) );
-        required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/.deployables" ) );
-        required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/.settings" ) );
-        required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/.wtpmodules" ) );
-        required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/.externalToolBuilders" ) );
+        required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/.deployables/" ) );
+        required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/.settings/" ) );
+        required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/.wtpmodules/" ) );
+        required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/.externalToolBuilders/" ) );
 
         required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/release.properties" ) );
         required.add( archivePathFromChild( BASENAME, VERSION, "child1", "/src/test/resources/pom.xml.releaseBackup" ) );

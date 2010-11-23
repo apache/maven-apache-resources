@@ -27,10 +27,18 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Enumeration;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.Set;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
+
+import org.codehaus.plexus.archiver.tar.GZipTarFile;
+import org.codehaus.plexus.archiver.tar.TarEntry;
+import org.codehaus.plexus.archiver.tar.TarFile;
 
 public class TestUtils
 {
@@ -54,26 +62,70 @@ public class TestUtils
         
         return ( artifactId + "-" + version + path );
     }
+    
+    
+    public static void assertTarContents( Set<String> required, Set<String> banned, File assembly )
+        throws IOException
+    {
+        assertTrue( "Assembly archive missing: " + assembly, assembly.isFile() );
 
-//    @SuppressWarnings( "unchecked" )
+        GZipTarFile tarFile = null;
+        try
+        {
+            tarFile = new GZipTarFile( assembly );
+
+            LinkedHashSet<String> pathSet = new LinkedHashSet<String>();
+
+            for ( @SuppressWarnings( "unchecked" )
+            Enumeration<TarEntry> enumeration = tarFile.getEntries(); enumeration.hasMoreElements(); )
+            {
+                pathSet.add( enumeration.nextElement().getName() );
+            }
+            assertArchiveContents( required, banned, assembly.getAbsolutePath(), pathSet );
+        }
+        finally
+        {
+            if ( tarFile != null )
+            {
+                tarFile.close();
+            }
+        }
+    }
+
     public static void assertZipContents( Set<String> required, Set<String> banned, File assembly )
         throws ZipException, IOException
     {
         assertTrue( "Assembly archive missing: " + assembly, assembly.isFile() );
-        
-        ZipFile zf = new ZipFile( assembly );
-        
-//        System.out.println( "Contents of: " + assembly + ":\n\n" );
-//        for( Enumeration<ZipEntry> e = (Enumeration<ZipEntry>) zf.entries(); e.hasMoreElements(); )
-//        {
-//            System.out.println( e.nextElement().getName() );
-//        }
-//        System.out.println( "\n\n" );
 
+        ZipFile zf = null;
+        try
+        {
+            zf = new ZipFile( assembly );
+
+            LinkedHashSet<String> pathSet = new LinkedHashSet<String>();
+
+            for ( Enumeration<? extends ZipEntry> enumeration = zf.entries(); enumeration.hasMoreElements(); )
+            {
+                pathSet.add( enumeration.nextElement().getName() );
+            }
+            assertArchiveContents( required, banned, assembly.getAbsolutePath(), pathSet );
+        }
+        finally
+        {
+            if ( zf != null )
+            {
+                zf.close();
+            }
+        }
+    }
+    
+    private static void assertArchiveContents(Set<String> required, Set<String> banned, String assemblyName, Set<String> contents )
+    {
+     
         Set<String> missing = new HashSet<String>();
         for ( String name : required )
         {
-            if ( zf.getEntry( name ) == null )
+            if ( !contents.contains( name ) )
             {
                 missing.add( name );
             }
@@ -82,19 +134,17 @@ public class TestUtils
         Set<String> banViolations = new HashSet<String>();
         for ( String name : banned )
         {
-            if ( zf.getEntry( name ) != null )
+            if ( contents.contains( name ) )
             {
                 banViolations.add( name );
             }
         }
 
-        zf.close();
-
         if ( !missing.isEmpty() || !banViolations.isEmpty() )
         {
             StringBuffer msg = new StringBuffer();
             msg.append( "The following errors were found in:\n\n" );
-            msg.append( assembly );
+            msg.append( assemblyName );
             msg.append( "\n");
             msg.append( "\nThe following REQUIRED entries were missing from the bundle archive:\n" );
 
@@ -123,9 +173,17 @@ public class TestUtils
                     msg.append( "\n" ).append( name );
                 }
             }
+            
+            msg.append( "\n" ).append( "Archive contents:\n" );
+            for ( String path : contents )
+            {
+                msg.append( "\n" ).append( path );
+            }
 
             fail( msg.toString() );
         }
+        
+        
     }
 
     public static File getTestDir( String name )
