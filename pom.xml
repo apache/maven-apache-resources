@@ -37,14 +37,6 @@
   <name>Apache Resource Bundles</name>
   <inceptionYear>2006</inceptionYear>
 
-  <modules>
-    <module>apache-jar-resource-bundle</module>
-    <module>apache-jar-txt-resource-bundle</module>
-    <module>apache-license-header-resource-bundle</module>
-    <module>apache-incubator-disclaimer-resource-bundle</module>         
-    <module>apache-source-release-assembly-descriptor</module>
-  </modules>
-
   <scm>
     <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk</connection>
     <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk</developerConnection>
