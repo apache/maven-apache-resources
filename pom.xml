@@ -43,6 +43,11 @@
     <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk</url>
   </scm>
 
+  <ciManagement>
+    <url>https://builds.apache.org/job/maven-project-resources/</url>
+    <system>Jenkins</system>
+  </ciManagement>
+
   <build>
     <pluginManagement>
       <plugins>
