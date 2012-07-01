@@ -26,7 +26,7 @@
     <groupId>org.apache.apache.resources</groupId>
     <artifactId>apache-resource-bundles</artifactId>
     <version>4-SNAPSHOT</version>
-    <relativePath>../pom.xml</relativePath>
+    <relativePath>../apache-resource-bundles/pom.xml</relativePath>
   </parent>
 
   <artifactId>apache-incubator-disclaimer-resource-bundle</artifactId>
