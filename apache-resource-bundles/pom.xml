@@ -38,9 +38,9 @@
   <inceptionYear>2006</inceptionYear>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk</developerConnection>
-    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk</url>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-resource-bundles</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk/apache-resource-bundles</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-resource-bundles</url>
   </scm>
 
   <ciManagement>
