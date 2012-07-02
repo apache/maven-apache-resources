@@ -37,6 +37,12 @@ under the License.
   <description>
     This jar contains a customized source assembly descriptor to produce Apache compliant source bundles.
   </description>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-source-release-assembly-descriptor</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk/apache-source-release-assembly-descriptor</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-source-release-assembly-descriptor</url>
+  </scm>
   
   <!-- NOTE: Configuration below this line is for integration tests. -->
   
