@@ -36,4 +36,11 @@
   <description>
     An archive which contains templates for generating the necessary license files and notices for all Apache releases.
   </description>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-jar-resource-bundle</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk/apache-jar-resource-bundle</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-jar-resource-bundle</url>
+  </scm>
+
 </project>

@@ -37,4 +37,11 @@
     An archive which contains templates for generating the necessary license files and notices for all Apache releases.
     Generated files use the .txt file extension as an alternative, no-extension files found in apache-jar-resource-bundle.
   </description>
+
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-jar-txt-resource-bundle</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk/apache-jar-txt-resource-bundle</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-jar-txt-resource-bundle</url>
+  </scm>
+
 </project>
