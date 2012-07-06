@@ -54,6 +54,7 @@
 
   <build>
     <plugins>
+      <!-- START SNIPPET: resources-bundles -->
       <!-- We want to package up license resources in the JARs produced -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -77,6 +78,9 @@
           </execution>
         </executions>
       </plugin>
+      <!-- END SNIPPET: resources-bundles -->
+
+      <!-- START SNIPPET: source-release -->
       <!-- Create a source-release artifact that contains the fully buildable
            project directory source structure. This is the artifact which is
            the official subject of any release vote. -->
@@ -111,6 +115,7 @@
           </execution>
         </executions>
       </plugin>
+      <!-- END SNIPPET: source-release -->
     </plugins>
   </build>
 </project>
