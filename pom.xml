@@ -30,6 +30,7 @@
   <artifactId>apache-resource-bundles-aggregator</artifactId>
   <version>1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <url>http://maven.apache.org/apache-resource-bundles</url>
 
   <name>Apache Maven Resource Bundles</name>
   <inceptionYear>2012</inceptionYear>
@@ -51,6 +52,13 @@
     <module>apache-source-release-assembly-descriptor</module>
     <module>resources-bundles-sample</module>
   </modules>
+
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <url>scp://people.apache.org/www/maven.apache.org/apache-resource-bundles</url>
+    </site>
+  </distributionManagement>
 
   <build>
     <plugins>
