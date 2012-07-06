@@ -43,4 +43,16 @@
     <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-jar-resource-bundle</url>
   </scm>
 
+  <url>${siteUrl}</url>
+  <properties>
+    <siteDeployUrl>scp://people.apache.org/www/maven.apache.org/apache-resource-bundles/apache-jar-resource-bundle</siteDeployUrl>
+    <siteUrl>http://maven.apache.org/apache-resource-bundles/apache-jar-resource-bundle</siteUrl>
+  </properties>
+  <distributionManagement>
+    <site>
+      <id>${siteDeployId}</id>
+      <url>${siteDeployUrl}</url>
+    </site>
+  </distributionManagement>
+
 </project>

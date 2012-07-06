@@ -36,6 +36,7 @@
   <name>Apache Resource Bundles</name>
   <inceptionYear>2006</inceptionYear>
 
+
   <scm>
     <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-resource-bundles</connection>
     <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk/apache-resource-bundles</developerConnection>
@@ -46,6 +47,19 @@
     <url>https://builds.apache.org/job/maven-project-resources/</url>
     <system>Jenkins</system>
   </ciManagement>
+
+  <url>${siteUrl}</url>
+  <properties>
+    <siteDeployUrl>scp://people.apache.org/www/maven.apache.org/apache-resource-bundles/apache-resource-bundles</siteDeployUrl>
+    <siteDeployId>apache.website</siteDeployId>
+    <siteUrl>http://maven.apache.org/apache-resource-bundles/apache-resource-bundles</siteUrl>
+  </properties>
+  <distributionManagement>
+    <site>
+      <id>${siteDeployId}</id>
+      <url>${siteDeployUrl}</url>
+    </site>
+  </distributionManagement>
 
   <build>
     <pluginManagement>
