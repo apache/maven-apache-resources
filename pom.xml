@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
   ~ Licensed to the Apache Software Foundation (ASF) under one
   ~ or more contributor license agreements.  See the NOTICE file
@@ -17,9 +16,7 @@
   ~ KIND, either express or implied.  See the License for the
   ~ specific language governing permissions and limitations
   ~ under the License.
-  -->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.apache.apache.resources</groupId>
@@ -30,6 +27,13 @@
   <name>Apache Resource Bundles Aggregator</name>
   <inceptionYear>2012</inceptionYear>
 
+  <properties>
+    <apache-jar-resource-bundle-version>1.4</apache-jar-resource-bundle-version>
+    <apache-jar-txt-resource-bundle-version>1.5-SNAPSHOT</apache-jar-txt-resource-bundle-version>
+    <apache-incubator-disclaimer-resource-bundle-version>1.2-SNAPSHOT</apache-incubator-disclaimer-resource-bundle-version>
+  </properties>
+
+
   <modules>
     <module>apache-resource-bundles</module>
     <module>apache-jar-resource-bundle</module>
@@ -37,6 +41,7 @@
     <module>apache-license-header-resource-bundle</module>
     <module>apache-incubator-disclaimer-resource-bundle</module>         
     <module>apache-source-release-assembly-descriptor</module>
+    <module>resources-bundles-sample</module>
   </modules>
 
   <build>
