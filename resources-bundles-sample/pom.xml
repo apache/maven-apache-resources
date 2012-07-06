@@ -77,6 +77,40 @@
           </execution>
         </executions>
       </plugin>
+      <!-- Create a source-release artifact that contains the fully buildable
+           project directory source structure. This is the artifact which is
+           the official subject of any release vote. -->
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.apache.resources</groupId>
+            <artifactId>apache-source-release-assembly-descriptor</artifactId>
+            <version>${apache-source-release-assembly-descriptor-version}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>source-release-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <!--
+              use this flag to generate source release assembly from the top of a multi modules
+              maven project.
+
+              <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
+              -->
+              <descriptorRefs>
+                <descriptorRef>source-release</descriptorRef>
+              </descriptorRefs>
+              <tarLongFileFormat>gnu</tarLongFileFormat>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>

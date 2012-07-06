@@ -32,6 +32,7 @@
     <apache-jar-resource-bundle-version>1.4</apache-jar-resource-bundle-version>
     <apache-jar-txt-resource-bundle-version>1.5-SNAPSHOT</apache-jar-txt-resource-bundle-version>
     <apache-incubator-disclaimer-resource-bundle-version>1.2-SNAPSHOT</apache-incubator-disclaimer-resource-bundle-version>
+    <apache-source-release-assembly-descriptor-version>1.0.3</apache-source-release-assembly-descriptor-version>
   </properties>
 
 
