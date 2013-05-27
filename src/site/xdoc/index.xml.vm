@@ -23,21 +23,20 @@
     <title>Apache Maven Resource Bundles</title>
     <author>Olivier Lamy</author>
   </properties>
+
   <body>
     <section name="Apache Maven Resource Bundles">
       <p>This project a set of resources to help you building Java resources compliant with Apache rules.</p>
+
       <section name="Text Materials">
         <p>
           To generate in your jar:
           <ul>
-            <li>META-INF/DEPENDENCIES</li>
-            <li>META-INF/LICENSE</li>
-            <li>META-INF/NOTICE</li>
+            <li><code>META-INF/DEPENDENCIES</code></li>
+            <li><code>META-INF/LICENSE</code></li>
+            <li><code>META-INF/NOTICE</code></li>
           </ul>
-          <source>
-            <![CDATA[
-
-      <plugin>
+          <source><![CDATA[      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-remote-resources-plugin</artifactId>
         <version>1.3</version>
@@ -58,19 +57,14 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-
-            ]]>
-          </source>
+      </plugin>]]></source>
         </p>
       </section>
+
       <section name="Source Assembly Descriptor">
         <p>Create a source-release artifact that contains the fully buildable project directory source structure.
           This is the artifact which is the official subject of any release vote.
-          <source>
-            <![CDATA[
-
-      <plugin>
+          <source><![CDATA[      <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <dependencies>
           <dependency>
@@ -100,10 +94,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-
-            ]]>
-          </source>
+      </plugin>]]></source>
         </p>
       </section>
     </section>
