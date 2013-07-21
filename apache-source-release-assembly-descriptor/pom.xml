@@ -195,7 +195,7 @@ under the License.
                   <descriptors>
                     <descriptor>src/main/assemblies/source-release.xml</descriptor>
                   </descriptors>
-                  <tarLongFileFormat>gnu</tarLongFileFormat>
+                  <tarLongFileMode>gnu</tarLongFileMode>
                 </configuration>
               </execution>
             </executions>

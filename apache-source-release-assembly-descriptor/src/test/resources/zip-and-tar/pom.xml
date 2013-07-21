@@ -36,7 +36,7 @@
               <goal>single</goal>
             </goals>
             <configuration>
-              <!-- <tarLongFileFormat>gnu</tarLongFileFormat> -->
+              <!-- <tarLongFileMode>gnu</tarLongFileMode> -->
               <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
               <descriptorRefs>
                 <descriptorRef>source-release-zip-tar</descriptorRef>
