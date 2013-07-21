@@ -18,7 +18,6 @@
 ##
 ## $Id: NOTICE.vm 638319 2008-03-18 11:10:09Z vsiveton $
 ##
-
 #if ($projectName)$projectName#else${project.name}#end
 
 Copyright ${projectTimespan}#if($project.organization.name) $project.organization.name#else The Apache Software Foundation#end
@@ -26,5 +25,3 @@ Copyright ${projectTimespan}#if($project.organization.name) $project.organizatio
 
 This product includes software developed at
 The Apache Software Foundation (http://www.apache.org/).
-
-
