@@ -36,6 +36,11 @@
   <name>Apache Maven Resource Bundles</name>
   <inceptionYear>2012</inceptionYear>
 
+  <issueManagement>
+    <system>jira</system>
+    <url>https://issues.apache.org/jira/browse/MASFRES</url>
+  </issueManagement>
+
   <properties>
     <apache-jar-resource-bundle-version>1.5-SNAPSHOT</apache-jar-resource-bundle-version>
     <apache-jar-txt-resource-bundle-version>1.5-SNAPSHOT</apache-jar-txt-resource-bundle-version>
