@@ -24,6 +24,7 @@
   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
   name="Apache Maven Resource Bundles">
 
+  <version position="none"/>
 
   <bannerLeft>
     <name>${project.name}</name>
