@@ -49,7 +49,7 @@
             <configuration>
               <resourceBundles>
                 <!-- Will generate META-INF/DEPENDENCIES META-INF/LICENSE META-INF/NOTICE -->
-                <resourceBundle>org.apache:apache-jar-resource-bundle:${apache-jar-resource-bundle-version}</resourceBundle>
+                <resourceBundle>org.apache.apache.resources:apache-jar-resource-bundle:${apache-jar-resource-bundle-version}</resourceBundle>
                 <!-- Will generate META-INF/DEPENDENCIES.txt META-INF/LICENSE.txt META-INF/NOTICE.txt -->
                 <resourceBundle>org.apache.apache.resources:apache-jar-txt-resource-bundle:${apache-jar-txt-resource-bundle-version}</resourceBundle>
                 <!-- Will generate META-INF/DISCLAIMER  -->
