@@ -43,16 +43,4 @@
     <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-license-header-resource-bundle</url>
   </scm>
 
-  <url>${siteUrl}</url>
-  <properties>
-    <siteDeployUrl>scp://people.apache.org/www/maven.apache.org/apache-resource-bundles/apache-license-header-resource-bundle</siteDeployUrl>
-    <siteUrl>http://maven.apache.org/apache-resource-bundles/apache-license-header-resource-bundle</siteUrl>
-  </properties>
-  <distributionManagement>
-    <site>
-      <id>${siteDeployId}</id>
-      <url>${siteDeployUrl}</url>
-    </site>
-  </distributionManagement>
-
 </project>

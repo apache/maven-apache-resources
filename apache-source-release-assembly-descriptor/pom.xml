@@ -44,19 +44,9 @@ under the License.
     <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-source-release-assembly-descriptor</url>
   </scm>
 
-  <url>${siteUrl}</url>
-  <distributionManagement>
-    <site>
-      <id>${siteDeployId}</id>
-      <url>${siteDeployUrl}</url>
-    </site>
-  </distributionManagement>
-  
   <!-- NOTE: Configuration below this line is for integration tests. -->
   
   <properties>
-    <siteDeployUrl>scp://people.apache.org/www/maven.apache.org/apache-resource-bundles/apache-source-release-assembly-descriptor</siteDeployUrl>
-    <siteUrl>http://maven.apache.org/apache-resource-bundles/apache-source-release-assembly-descriptor</siteUrl>
     <!-- The original Maven distribution to test. -->
     <mavenHome>${maven.home}</mavenHome>
     <!-- The (possibly instrumented copy of the) Maven distribution we actually use for the tests. -->
