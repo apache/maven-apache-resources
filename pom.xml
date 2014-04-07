@@ -45,7 +45,7 @@
     <apache-jar-resource-bundle-version>1.5-SNAPSHOT</apache-jar-resource-bundle-version>
     <apache-jar-txt-resource-bundle-version>1.5-SNAPSHOT</apache-jar-txt-resource-bundle-version>
     <apache-incubator-disclaimer-resource-bundle-version>1.2-SNAPSHOT</apache-incubator-disclaimer-resource-bundle-version>
-    <apache-source-release-assembly-descriptor-version>1.0.3</apache-source-release-assembly-descriptor-version>
+    <apache-source-release-assembly-descriptor-version>1.0.5-SNAPSHOT</apache-source-release-assembly-descriptor-version>
     <siteDeployUrl>scp://people.apache.org/www/maven.apache.org/apache-resource-bundles</siteDeployUrl>
     <siteDeployId>apache.website</siteDeployId>
     <siteUrl>http://maven.apache.org/apache-resource-bundles</siteUrl>
@@ -63,6 +63,7 @@
   </modules>
 
   <distributionManagement>
+    <!-- @todo Convert to svnpubsub for site deployment -->
     <site>
       <id>${siteDeployId}</id>
       <url>${siteDeployUrl}</url>
