@@ -31,16 +31,16 @@
 
   <groupId>org.apache.apache.resources</groupId>
   <artifactId>apache-resource-bundles</artifactId>
-  <version>5-SNAPSHOT</version>
+  <version>5</version>
   <packaging>pom</packaging>
 
   <name>Apache Resource Bundles</name>
   <inceptionYear>2006</inceptionYear>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-resource-bundles</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk/apache-resource-bundles</developerConnection>
-    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-resource-bundles</url>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/tags/apache-resource-bundles-5</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/tags/apache-resource-bundles-5</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/tags/apache-resource-bundles-5</url>
   </scm>
 
   <issueManagement>
