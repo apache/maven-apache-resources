@@ -91,63 +91,6 @@ under the License.
     <pluginManagement>
       <plugins>
         <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <executions>
-            <execution>
-              <id>default-testCompile</id>
-              <configuration>
-                <skip>true</skip>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <configuration>
-            <skip>true</skip>
-          </configuration>
-          <executions>
-            <execution>
-              <id>default-test</id>
-              <configuration>
-                <!-- Lock this down, regardless of what happens to the plugin-level config -->
-                <skip>true</skip>
-              </configuration>
-            </execution>
-            <execution>
-              <id>integration-tests</id>
-              <phase>integration-test</phase>
-              <goals>
-                <goal>test</goal>
-              </goals>
-              <configuration>
-                <includes>
-                  <include>**/IT*.java</include>
-                </includes>
-                <excludes>
-                  <exclude>**/util/*</exclude>
-                </excludes>
-                <forkMode>never</forkMode>
-                <systemProperties>
-                  <property>
-                    <name>maven.version</name>
-                    <value>${maven.version}</value>
-                  </property>
-                  <property>
-                    <name>maven.home</name>
-                    <value>${preparedMavenHome}</value>
-                  </property>
-                  <property>
-                    <!-- Pass this through to the tests (if set!) to have them pick the right repository -->
-                    <name>maven.repo.local</name>
-                    <value>${project.build.directory}/it-repo</value>
-                  </property>
-                </systemProperties>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
           <groupId>org.apache.rat</groupId>
           <artifactId>apache-rat-plugin</artifactId>
           <configuration>
@@ -194,24 +137,47 @@ under the License.
         </plugins>
       </build>
     </profile>
+
     <profile>
       <id>run-its</id>
-      
       <build>
         <plugins>
           <plugin>
-            <artifactId>maven-compiler-plugin</artifactId>
+            <artifactId>maven-failsafe-plugin</artifactId>
             <executions>
               <execution>
-                <id>compile-integration-tests</id>
-                <phase>pre-integration-test</phase>
                 <goals>
-                  <goal>testCompile</goal>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
                 </goals>
+                <configuration>
+                  <includes>
+                    <include>**/IT*.java</include>
+                  </includes>
+                  <excludes>
+                    <exclude>**/util/*</exclude>
+                  </excludes>
+                  <forkCount>0</forkCount>
+                  <systemProperties>
+                    <property>
+                      <name>maven.version</name>
+                      <value>${maven.version}</value>
+                    </property>
+                    <property>
+                      <name>maven.home</name>
+                      <value>${preparedMavenHome}</value>
+                    </property>
+                    <property>
+                      <!-- Pass this through to the tests (if set!) to have them pick the right repository -->
+                      <name>maven.repo.local</name>
+                      <value>${project.build.directory}/it-repo</value>
+                    </property>
+                  </systemProperties>
+                </configuration>
               </execution>
             </executions>
           </plugin>
-          
+
           <plugin>
             <artifactId>maven-invoker-plugin</artifactId>
             <executions>
@@ -226,13 +192,6 @@ under the License.
                 </configuration>
               </execution>
             </executions>
-          </plugin>
-          
-          <plugin>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-              <skip>false</skip>
-            </configuration>
           </plugin>
         </plugins>
       </build>
