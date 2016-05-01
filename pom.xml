@@ -51,6 +51,8 @@ under the License.
     <mavenHome>${maven.home}</mavenHome>
     <!-- The (possibly instrumented copy of the) Maven distribution we actually use for the tests. -->
     <preparedMavenHome>${mavenHome}</preparedMavenHome>
+    <!-- the version of aven-assemplugin to use in ITs -->
+    <assemblyPluginVersion>2.2</assemblyPluginVersion>
   </properties>
 
   <dependencies>
