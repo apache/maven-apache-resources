@@ -31,7 +31,7 @@ under the License.
   
   <artifactId>apache-source-release-assembly-descriptor</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.6-SNAPSHOT</version>
+  <version>1.0.6</version>
   
   <name>Apache Source Release Assembly Descriptor</name>
   <description>
@@ -39,9 +39,9 @@ under the License.
   </description>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-source-release-assembly-descriptor</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk/apache-source-release-assembly-descriptor</developerConnection>
-    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-source-release-assembly-descriptor</url>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/tags/apache-source-release-assembly-descriptor-1.0.6</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/tags/apache-source-release-assembly-descriptor-1.0.6</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/tags/apache-source-release-assembly-descriptor-1.0.6</url>
   </scm>
 
   <!-- NOTE: Configuration below this line is for integration tests. -->
