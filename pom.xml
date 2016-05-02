@@ -36,7 +36,6 @@
   <inceptionYear>2012</inceptionYear>
 
   <modules>
-    <module>apache-resource-bundles</module>
     <module>apache-jar-resource-bundle</module>
     <module>apache-jar-txt-resource-bundle</module>
     <module>apache-license-header-resource-bundle</module>
