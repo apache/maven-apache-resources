@@ -38,7 +38,7 @@
     <apache-jar-resource-bundle-version>1.5-SNAPSHOT</apache-jar-resource-bundle-version>
     <apache-jar-txt-resource-bundle-version>1.5-SNAPSHOT</apache-jar-txt-resource-bundle-version>
     <apache-incubator-disclaimer-resource-bundle-version>1.2-SNAPSHOT</apache-incubator-disclaimer-resource-bundle-version>
-    <apache-source-release-assembly-descriptor-version>1.0.6-SNAPSHOT</apache-source-release-assembly-descriptor-version>
+    <apache-source-release-assembly-descriptor-version>1.0.7-SNAPSHOT</apache-source-release-assembly-descriptor-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
