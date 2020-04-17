@@ -94,6 +94,11 @@ under the License.
               <exclude>src/test/resources/**/*.iml</exclude>
               <exclude>src/test/resources/**/*.iws</exclude>
               <exclude>src/test/resources/**/org.*.prefs</exclude>
+              <exclude>src/test/resources/**/.github/**</exclude>
+              <exclude>src/test/resources/**/.*.yml</exclude>
+              <exclude>src/test/resources/**/.*.yaml</exclude>
+              <exclude>src/test/resources/**/Jenkinsfile</exclude>
+              <exclude>src/test/resources/**/*.sh</exclude>
             </excludes>
           </configuration>
         </plugin>
