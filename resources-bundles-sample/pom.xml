@@ -33,11 +33,6 @@
   <name>resources-bundles-sample</name>
 
   <properties>
-    <apache-jar-resource-bundle-version>1.5-SNAPSHOT</apache-jar-resource-bundle-version>
-    <apache-jar-txt-resource-bundle-version>1.5-SNAPSHOT</apache-jar-txt-resource-bundle-version>
-    <apache-incubator-disclaimer-resource-bundle-version>1.2-SNAPSHOT</apache-incubator-disclaimer-resource-bundle-version>
-    <apache-source-release-assembly-descriptor-version>1.0.7-SNAPSHOT</apache-source-release-assembly-descriptor-version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.deploy.skip>true</maven.deploy.skip>
   </properties>
 
@@ -45,17 +40,17 @@
     <dependency>
       <groupId>org.apache.apache.resources</groupId>
       <artifactId>apache-jar-resource-bundle</artifactId>
-      <version>${apache-jar-resource-bundle-version}</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.apache.resources</groupId>
       <artifactId>apache-jar-txt-resource-bundle</artifactId>
-      <version>${apache-jar-txt-resource-bundle-version}</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.apache.resources</groupId>
       <artifactId>apache-incubator-disclaimer-resource-bundle</artifactId>
-      <version>${apache-incubator-disclaimer-resource-bundle-version}</version>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
 
@@ -66,7 +61,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-remote-resources-plugin</artifactId>
-        <version>1.3</version>
+        <version>1.7.0</version>
         <executions>
           <execution>
             <goals>
@@ -75,11 +70,11 @@
             <configuration>
               <resourceBundles>
                 <!-- Will generate META-INF/DEPENDENCIES META-INF/LICENSE META-INF/NOTICE -->
-                <resourceBundle>org.apache.apache.resources:apache-jar-resource-bundle:${apache-jar-resource-bundle-version}</resourceBundle>
+                <resourceBundle>org.apache.apache.resources:apache-jar-resource-bundle:${project.version}</resourceBundle>
                 <!-- Will generate META-INF/DEPENDENCIES.txt META-INF/LICENSE.txt META-INF/NOTICE.txt -->
-                <resourceBundle>org.apache.apache.resources:apache-jar-txt-resource-bundle:${apache-jar-txt-resource-bundle-version}</resourceBundle>
+                <resourceBundle>org.apache.apache.resources:apache-jar-txt-resource-bundle:${project.version}</resourceBundle>
                 <!-- Will generate META-INF/DISCLAIMER  -->
-                <resourceBundle>org.apache.apache.resources:apache-incubator-disclaimer-resource-bundle:${apache-incubator-disclaimer-resource-bundle-version}</resourceBundle>
+                <resourceBundle>org.apache.apache.resources:apache-incubator-disclaimer-resource-bundle:${project.version}</resourceBundle>
               </resourceBundles>
             </configuration>
           </execution>
@@ -97,7 +92,7 @@
           <dependency>
             <groupId>org.apache.apache.resources</groupId>
             <artifactId>apache-source-release-assembly-descriptor</artifactId>
-            <version>${apache-source-release-assembly-descriptor-version}</version>
+            <version>${project.version}</version>
           </dependency>
         </dependencies>
         <executions>

@@ -26,16 +26,13 @@
     <version>1.5-SNAPSHOT</version>
   </parent>
 
-  <artifactId>apache-jar-txt-resource-bundle</artifactId>
+  <artifactId>apache-incubator-disclaimer-resource-bundle</artifactId>
 
-  <name>Apache JAR (.txt) Resource Bundle</name>
-  <description>An archive which contains templates for generating the necessary license files and notices for all Apache releases.
-    Generated files use the .txt file extension as an alternative, no-extension files found in apache-jar-resource-bundle.</description>
+  <name>Apache Incubator Disclaimer Resource Bundle</name>
+  <description>An archive which contains the standard Apache Incubator disclaimer.</description>
 
-  <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-jar-txt-resource-bundle</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk/apache-jar-txt-resource-bundle</developerConnection>
-    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-jar-txt-resource-bundle</url>
-  </scm>
+  <properties>
+    <project.directory>incubator-disclaimer</project.directory>
+  </properties>
 
 </project>

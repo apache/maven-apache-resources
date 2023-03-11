@@ -33,14 +33,15 @@
   <packaging>pom</packaging>
 
   <name>Apache Resource Bundles</name>
+  <url>https://maven.apache.org/apache-resource-bundles/</url>
   <inceptionYear>2006</inceptionYear>
 
   <modules>
-    <module>apache-jar-resource-bundle</module>
-    <module>apache-jar-txt-resource-bundle</module>
-    <module>apache-license-header-resource-bundle</module>
-    <module>apache-incubator-disclaimer-resource-bundle</module>
-    <module>apache-source-release-assembly-descriptor</module>
+    <module>jar</module>
+    <module>jar-txt</module>
+    <module>incubator-disclaimer</module>
+    <module>source-release</module>
+    <module>license-header</module>
     <module>resources-bundles-sample</module>
   </modules>
 
@@ -54,11 +55,21 @@
     <system>jira</system>
     <url>https://issues.apache.org/jira/browse/MASFRES</url>
   </issueManagement>
-
   <ciManagement>
     <system>Jenkins</system>
     <url>https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-project-resources/</url>
   </ciManagement>
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <url>scm:svn:https://svn.apache.org/repos/asf/maven/website/components/${maven.site.path}</url>
+    </site>
+  </distributionManagement>
+
+  <properties>
+    <maven.site.path>apache-resource-bundles-archives/apache-resource-bundles-LATEST</maven.site.path>
+    <project.build.outputTimestamp>2023-03-11T18:23:15Z</project.build.outputTimestamp>
+  </properties>
 
   <build>
     <plugins>

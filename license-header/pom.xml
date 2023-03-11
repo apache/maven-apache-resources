@@ -26,15 +26,13 @@
     <version>1.5-SNAPSHOT</version>
   </parent>
 
-  <artifactId>apache-incubator-disclaimer-resource-bundle</artifactId>
+  <artifactId>apache-license-header-resource-bundle</artifactId>
 
-  <name>Apache Incubator Disclaimer Resource Bundle</name>
-  <description>An archive which contains the standard Apache Incubator disclaimer.</description>
+  <name>Apache License Header Resource Bundle</name>
+  <description>An archive which contains the license header template.</description>
 
-  <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-incubator-disclaimer-resource-bundle</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/resources/trunk/apache-incubator-disclaimer-resource-bundle</developerConnection>
-    <url>http://svn.apache.org/viewcvs.cgi/maven/resources/trunk/apache-incubator-disclaimer-resource-bundle</url>
-  </scm>
+  <properties>
+    <project.directory>license-header</project.directory>
+  </properties>
 
 </project>
