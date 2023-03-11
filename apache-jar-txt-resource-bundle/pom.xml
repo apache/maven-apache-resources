@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
   ~ Licensed to the Apache Software Foundation (ASF) under one
   ~ or more contributor license agreements.  See the NOTICE file
@@ -18,24 +17,21 @@
   ~ specific language governing permissions and limitations
   ~ under the License.
   -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.apache.apache.resources</groupId>
     <artifactId>apache-resource-bundles</artifactId>
-    <version>4</version>
+    <version>40-SNAPSHOT</version>
   </parent>
 
   <artifactId>apache-jar-txt-resource-bundle</artifactId>
   <version>1.5-SNAPSHOT</version>
 
   <name>Apache JAR (.txt) Resource Bundle</name>
-  <description>
-    An archive which contains templates for generating the necessary license files and notices for all Apache releases.
-    Generated files use the .txt file extension as an alternative, no-extension files found in apache-jar-resource-bundle.
-  </description>
+  <description>An archive which contains templates for generating the necessary license files and notices for all Apache releases.
+    Generated files use the .txt file extension as an alternative, no-extension files found in apache-jar-resource-bundle.</description>
 
   <scm>
     <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-jar-txt-resource-bundle</connection>

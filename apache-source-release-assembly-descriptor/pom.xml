@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -18,24 +17,21 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+
   <parent>
     <groupId>org.apache.apache.resources</groupId>
     <artifactId>apache-resource-bundles</artifactId>
-    <version>5</version>
+    <version>40-SNAPSHOT</version>
   </parent>
-  
+
   <artifactId>apache-source-release-assembly-descriptor</artifactId>
-  <packaging>jar</packaging>
   <version>1.0.7-SNAPSHOT</version>
-  
+  <packaging>jar</packaging>
+
   <name>Apache Source Release Assembly Descriptor</name>
-  <description>
-    This jar contains a customized source assembly descriptor to produce Apache compliant source bundles.
-  </description>
+  <description>This jar contains a customized source assembly descriptor to produce Apache compliant source bundles.</description>
 
   <scm>
     <connection>scm:svn:http://svn.apache.org/repos/asf/maven/resources/trunk/apache-source-release-assembly-descriptor</connection>
@@ -44,7 +40,7 @@ under the License.
   </scm>
 
   <!-- NOTE: Configuration below this line is for integration tests. -->
-  
+
   <properties>
     <!-- The original Maven distribution to test. -->
     <mavenHome>${maven.home}</mavenHome>
@@ -84,11 +80,11 @@ under the License.
   <build>
     <testResources>
       <testResource>
-        <directory>src/test/resources</directory>
         <filtering>true</filtering>
+        <directory>src/test/resources</directory>
       </testResource>
     </testResources>
-    
+
     <pluginManagement>
       <plugins>
         <plugin>
@@ -121,10 +117,10 @@ under the License.
             <executions>
               <execution>
                 <id>source-release-assembly</id>
-                <phase>package</phase>
                 <goals>
                   <goal>single</goal>
                 </goals>
+                <phase>package</phase>
                 <configuration>
                   <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
                   <descriptors>
@@ -184,10 +180,10 @@ under the License.
             <executions>
               <execution>
                 <id>install-descriptor</id>
-                <phase>pre-integration-test</phase>
                 <goals>
                   <goal>install</goal>
                 </goals>
+                <phase>pre-integration-test</phase>
                 <configuration>
                   <localRepositoryPath>${project.build.directory}/it-repo</localRepositoryPath>
                 </configuration>
