@@ -23,11 +23,10 @@ under the License.
   <parent>
     <groupId>org.apache.apache.resources</groupId>
     <artifactId>apache-resource-bundles</artifactId>
-    <version>40-SNAPSHOT</version>
+    <version>1.5-SNAPSHOT</version>
   </parent>
 
   <artifactId>apache-source-release-assembly-descriptor</artifactId>
-  <version>1.0.7-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>Apache Source Release Assembly Descriptor</name>
