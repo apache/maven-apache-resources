@@ -26,7 +26,6 @@ under the License.
     <groupId>org.apache.apache.resources</groupId>
     <artifactId>apache-resource-bundles</artifactId>
     <version>5</version>
-    <relativePath>../apache-resource-bundles/pom.xml</relativePath>
   </parent>
   
   <artifactId>apache-source-release-assembly-descriptor</artifactId>

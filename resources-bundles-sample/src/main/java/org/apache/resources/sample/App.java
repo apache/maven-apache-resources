@@ -1,5 +1,3 @@
-package org.apache.resources.sample;
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,15 +16,14 @@ package org.apache.resources.sample;
  * specific language governing permissions and limitations
  * under the License.
  */
+package org.apache.resources.sample;
 
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
     }
 }

@@ -26,7 +26,6 @@
     <groupId>org.apache.apache.resources</groupId>
     <artifactId>apache-resource-bundles</artifactId>
     <version>4</version>
-    <relativePath>../apache-resource-bundles/pom.xml</relativePath>
   </parent>
 
   <artifactId>apache-license-header-resource-bundle</artifactId>
