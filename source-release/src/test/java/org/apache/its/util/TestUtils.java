@@ -50,8 +50,8 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 
+import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.codehaus.plexus.archiver.tar.GZipTarFile;
-import org.codehaus.plexus.archiver.tar.TarEntry;
 
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.fail;
@@ -83,7 +83,7 @@ public class TestUtils {
 
             LinkedHashSet<String> pathSet = new LinkedHashSet<String>();
 
-            for (@SuppressWarnings("unchecked") Enumeration<TarEntry> enumeration = tarFile.getEntries();
+            for (@SuppressWarnings("unchecked") Enumeration<ArchiveEntry> enumeration = tarFile.getEntries();
                     enumeration.hasMoreElements(); ) {
                 pathSet.add(enumeration.nextElement().getName());
             }
