@@ -58,9 +58,9 @@
         <!-- CI -->
         <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.github(/.*)?]</exclude>
         <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.Jenkinsfile]</exclude>
-        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.asf.yaml]</exclude>
-        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.travis.yml]</exclude>
-        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?deploySite.sh]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.asf\.yaml]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.travis\.yml]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?deploySite\.sh]</exclude>
 
         <!-- misc -->
         <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?cobertura\.ser]</exclude>
