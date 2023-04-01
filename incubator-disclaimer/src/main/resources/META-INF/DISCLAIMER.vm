@@ -16,8 +16,6 @@
 ## specific language governing permissions and limitations
 ## under the License.
 ##
-## $Id$
-##
 #if(${projectName})${projectName}#else${project.name}#end is an effort undergoing incubation at the Apache Software 
 Foundation (ASF), sponsored by the Apache Incubator PMC. 
 

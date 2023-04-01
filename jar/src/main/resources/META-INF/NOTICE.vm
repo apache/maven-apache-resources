@@ -16,8 +16,6 @@
 ## specific language governing permissions and limitations
 ## under the License.
 ##
-## $Id$
-##
 #if ($projectName)$projectName#else${project.name}#end
 
 Copyright ${projectTimespan}#if($project.organization.name) $project.organization.name#else The Apache Software Foundation#end
