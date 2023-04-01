@@ -23,7 +23,7 @@
   <parent>
     <groupId>org.apache.apache.resources</groupId>
     <artifactId>apache-resource-bundles</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.5</version>
   </parent>
 
   <artifactId>apache-jar-resource-bundle</artifactId>
