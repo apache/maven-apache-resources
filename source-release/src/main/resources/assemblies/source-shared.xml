@@ -71,6 +71,9 @@
 
         <!-- maven-shade-plugin -->
         <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?dependency-reduced-pom\.xml]</exclude>
+
+        <!-- flatten-maven-plugin -->
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.flattened-pom\.xml]</exclude>
       </excludes>
     </fileSet>
     <!-- license, readme, etc. calculated at build time -->
