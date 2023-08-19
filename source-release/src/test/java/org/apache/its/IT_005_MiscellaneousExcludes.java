@@ -54,7 +54,7 @@ public class IT_005_MiscellaneousExcludes {
 
         Set<String> required = Collections.emptySet();
 
-        Set<String> banned = new HashSet<String>();
+        Set<String> banned = new HashSet<>();
 
         banned.add(archivePathFromProject(BASENAME, VERSION, "/cobertura.ser"));
         banned.add(archivePathFromProject(BASENAME, VERSION, "/release.properties"));

@@ -51,14 +51,14 @@ public class IT_003_SharedResourceInclusion {
 
         File assembly = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
 
-        Set<String> required = new HashSet<String>();
+        Set<String> required = new HashSet<>();
 
         required.add(archivePathFromProject(BASENAME, VERSION, "/pom.xml"));
         required.add(archivePathFromProject(BASENAME, VERSION, "/LICENSE"));
         required.add(archivePathFromProject(BASENAME, VERSION, "/DEPENDENCIES"));
         required.add(archivePathFromProject(BASENAME, VERSION, "/NOTICE"));
 
-        Set<String> banned = new HashSet<String>();
+        Set<String> banned = new HashSet<>();
 
         banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/LICENSE"));
         banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/DEPENDENCIES"));

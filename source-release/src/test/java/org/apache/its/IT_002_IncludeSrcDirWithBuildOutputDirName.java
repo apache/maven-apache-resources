@@ -51,7 +51,7 @@ public class IT_002_IncludeSrcDirWithBuildOutputDirName {
 
         File assembly = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
 
-        Set<String> required = new HashSet<String>();
+        Set<String> required = new HashSet<>();
 
         required.add(archivePathFromProject(BASENAME, VERSION, "/pom.xml"));
         required.add(archivePathFromChild(BASENAME, VERSION, "child1", "/pom.xml"));
@@ -61,7 +61,7 @@ public class IT_002_IncludeSrcDirWithBuildOutputDirName {
         required.add(archivePathFromChild(BASENAME, VERSION, "child1", "/src/main/java/target/App.java"));
         required.add(archivePathFromChild(BASENAME, VERSION, "child2", "/src/main/java/target/App.java"));
 
-        Set<String> banned = new HashSet<String>();
+        Set<String> banned = new HashSet<>();
 
         banned.add(archivePathFromProject(BASENAME, VERSION, "/target/"));
         banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/target/"));

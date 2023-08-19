@@ -54,7 +54,7 @@ public class IT_004_IdeExcludes {
 
         Set<String> required = Collections.emptySet();
 
-        Set<String> banned = new HashSet<String>();
+        Set<String> banned = new HashSet<>();
 
         banned.add(archivePathFromProject(BASENAME, VERSION, "/.classpath"));
         banned.add(archivePathFromProject(BASENAME, VERSION, "/.project"));
