@@ -57,7 +57,7 @@ public class IT_000_BasicArchiveCreation {
 
         File assembly = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
 
-        Set<String> required = new HashSet<String>();
+        Set<String> required = new HashSet<>();
 
         required.add(archivePathFromProject(BASENAME, VERSION, "/pom.xml"));
         required.add(archivePathFromChild(BASENAME, VERSION, "child1", "pom.xml"));

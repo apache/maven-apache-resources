@@ -53,7 +53,7 @@ public class IT_006_CiExcludes {
 
         Set<String> required = Collections.emptySet();
 
-        Set<String> banned = new HashSet<String>();
+        Set<String> banned = new HashSet<>();
 
         banned.add(archivePathFromProject(BASENAME, VERSION, "/.github"));
         banned.add(archivePathFromProject(BASENAME, VERSION, "/Jenkinsfile"));

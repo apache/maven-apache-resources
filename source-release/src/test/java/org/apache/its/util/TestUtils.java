@@ -62,7 +62,7 @@ public class TestUtils {
         try {
             tarFile = new GZipTarFile(assembly);
 
-            LinkedHashSet<String> pathSet = new LinkedHashSet<String>();
+            LinkedHashSet<String> pathSet = new LinkedHashSet<>();
 
             for (@SuppressWarnings("unchecked") Enumeration<ArchiveEntry> enumeration = tarFile.getEntries();
                     enumeration.hasMoreElements(); ) {
@@ -84,7 +84,7 @@ public class TestUtils {
         try {
             zf = new ZipFile(assembly);
 
-            LinkedHashSet<String> pathSet = new LinkedHashSet<String>();
+            LinkedHashSet<String> pathSet = new LinkedHashSet<>();
 
             for (Enumeration<? extends ZipEntry> enumeration = zf.entries(); enumeration.hasMoreElements(); ) {
                 pathSet.add(enumeration.nextElement().getName());
@@ -100,14 +100,14 @@ public class TestUtils {
     private static void assertArchiveContents(
             Set<String> required, Set<String> banned, String assemblyName, Set<String> contents) {
 
-        Set<String> missing = new HashSet<String>();
+        Set<String> missing = new HashSet<>();
         for (String name : required) {
             if (!contents.contains(name)) {
                 missing.add(name);
             }
         }
 
-        Set<String> banViolations = new HashSet<String>();
+        Set<String> banViolations = new HashSet<>();
         for (String name : banned) {
             if (contents.contains(name)) {
                 banViolations.add(name);
