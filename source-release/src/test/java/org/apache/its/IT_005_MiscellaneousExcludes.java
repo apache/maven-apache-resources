@@ -21,7 +21,6 @@ package org.apache.its;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -53,7 +52,7 @@ public class IT_005_MiscellaneousExcludes {
 
         File assembly = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
 
-        Set<String> required = Collections.emptySet();
+        Set<String> required = new HashSet<>();
 
         Set<String> banned = new HashSet<>();
 
@@ -65,6 +64,7 @@ public class IT_005_MiscellaneousExcludes {
 
         banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/cobertura.ser"));
 
+        required.add(archivePathFromProject(BASENAME, VERSION, "/some-target.txt"));
         assertZipContents(required, banned, assembly);
     }
 }
