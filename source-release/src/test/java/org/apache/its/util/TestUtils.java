@@ -32,12 +32,27 @@ import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
+import org.apache.maven.it.VerificationException;
+import org.apache.maven.it.Verifier;
 import org.codehaus.plexus.archiver.tar.GZipTarFile;
 
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.fail;
 
 public class TestUtils {
+
+    private static final String IT_REPO_LOCAL = "it.repo.local";
+
+    public static Verifier createVerifier(File testDir) throws VerificationException {
+        Verifier verifier = new Verifier(testDir.getAbsolutePath());
+        // FIXME: remove using custom local repository instead of leveraging property "maven.repo.local" (workaround for
+        // https://issues.apache.org/jira/browse/SUREFIRE-1385)
+        String itRepoLocal = System.getProperty(IT_REPO_LOCAL);
+        if (itRepoLocal != null) {
+            verifier.setLocalRepo(itRepoLocal);
+        }
+        return verifier;
+    }
 
     public static String archivePathFromChild(String artifactId, String version, String childName, String childPath) {
         if (!childPath.startsWith("/")) {

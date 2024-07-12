@@ -34,6 +34,7 @@ import static org.apache.its.util.TestUtils.archivePathFromChild;
 import static org.apache.its.util.TestUtils.archivePathFromProject;
 import static org.apache.its.util.TestUtils.assertTarContents;
 import static org.apache.its.util.TestUtils.assertZipContents;
+import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
 
 public class IT_ZipAndTarCreation {
@@ -45,7 +46,7 @@ public class IT_ZipAndTarCreation {
     public void execute() throws VerificationException, IOException, URISyntaxException {
         File testDir = getTestDir(BASENAME);
 
-        Verifier verifier = new Verifier(testDir.getAbsolutePath());
+        Verifier verifier = createVerifier(testDir);
 
         verifier.executeGoal("package");
 
