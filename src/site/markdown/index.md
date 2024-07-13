@@ -22,12 +22,12 @@ under the License.
 
 Apache Resource Bundles provides a set of resources to help ASF projects build Java resources compliant with ASF rules:
 
-- [JAR Resource Bundle](./jar/) to generate generate `META-INF/DEPENDENCIES`, `META-INF/LICENSE`, `META-INF/NOTICE`
+- [JAR Resource Bundle](./jar/) to generate `META-INF/DEPENDENCIES`, `META-INF/LICENSE`, `META-INF/NOTICE`
 
-- [TXT JAR Resource Bundle](./jar-txt/) to generate generate `META-INF/DEPENDENCIES.txt`, `META-INF/LICENSE.txt`, `META-INF/NOTICE.txt`
+- [TXT JAR Resource Bundle](./jar-txt/) to generate `META-INF/DEPENDENCIES.txt`, `META-INF/LICENSE.txt`, `META-INF/NOTICE.txt`
 
 - [Incubator Disclaimer Resource Bundle](./incubator-disclaimer/) to generate `META-INF/DISCLAIMER`
 
-- [Source Release Assembly Descriptor](./source-release/) to create `-source-release` archives that contains the fully buildable project directory source structure
+- [Source Release Assembly Descriptor](./source-release/) to create `-source-release` archives that contain the fully buildable project directory source structure
 
 - [License Header Resource Bundle](./license-header/)
