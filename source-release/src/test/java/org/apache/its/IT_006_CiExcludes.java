@@ -31,6 +31,7 @@ import org.junit.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromProject;
 import static org.apache.its.util.TestUtils.assertZipContents;
+import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
 
 public class IT_006_CiExcludes {
@@ -42,7 +43,7 @@ public class IT_006_CiExcludes {
     public void execute() throws VerificationException, IOException, URISyntaxException {
         File testDir = getTestDir(BASENAME);
 
-        Verifier verifier = new Verifier(testDir.getAbsolutePath());
+        Verifier verifier = createVerifier(testDir);
 
         verifier.executeGoal("package");
 

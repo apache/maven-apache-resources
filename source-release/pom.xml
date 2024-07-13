@@ -135,9 +135,11 @@ under the License.
                       <name>maven.home</name>
                       <value>${preparedMavenHome}</value>
                     </property>
+                    <!-- cannot use property "maven.repo.local" as already used as user property on the CLI through ASF Jenkins -->
+                    <!-- TODO: replace with "maven.repo.local" once https://issues.apache.org/jira/browse/SUREFIRE-1385 is fixed -->
                     <property>
                       <!-- Pass this through to the tests (if set!) to have them pick the right repository -->
-                      <name>maven.repo.local</name>
+                      <name>it.repo.local</name>
                       <value>${project.build.directory}/it-repo</value>
                     </property>
                   </systemProperties>
