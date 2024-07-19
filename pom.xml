@@ -29,7 +29,7 @@
 
   <groupId>org.apache.apache.resources</groupId>
   <artifactId>apache-resource-bundles</artifactId>
-  <version>1.6-SNAPSHOT</version>
+  <version>1.6</version>
   <packaging>pom</packaging>
 
   <name>Apache Resource Bundles</name>
@@ -48,7 +48,7 @@
   <scm>
     <connection>scm:git:https://gitbox.apache.org/repos/asf/maven-apache-resources.git</connection>
     <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/maven-apache-resources.git</developerConnection>
-    <tag>master</tag>
+    <tag>apache-resource-bundles-1.6</tag>
     <url>https://github.com/apache/maven-apache-resources/tree/${project.scm.tag}</url>
   </scm>
   <issueManagement>
@@ -68,7 +68,7 @@
 
   <properties>
     <maven.site.path>apache-resource-bundles-archives/apache-resource-bundles-LATEST</maven.site.path>
-    <project.build.outputTimestamp>2023-04-01T17:47:15Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2024-07-19T09:15:19Z</project.build.outputTimestamp>
   </properties>
 
   <build>
