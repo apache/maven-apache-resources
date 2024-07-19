@@ -165,7 +165,7 @@ public class TestUtils {
 
     public static File getTestDir(String name) throws IOException, URISyntaxException {
         ClassLoader cloader = Thread.currentThread().getContextClassLoader();
-        URL resource = cloader.getResource(name);
+        URL resource = cloader.getResource("maven-projects/" + name);
 
         if (resource == null) {
             throw new IOException("Cannot find test directory: " + name);

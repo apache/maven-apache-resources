@@ -101,6 +101,14 @@ under the License.
             </excludes>
           </configuration>
         </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <excludes>
+              <exclude>**/maven-projects/**</exclude>
+            </excludes>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -124,6 +132,7 @@ under the License.
                   </includes>
                   <excludes>
                     <exclude>**/util/*</exclude>
+                    <exclude>**/maven-projects/**</exclude>
                   </excludes>
                   <forkCount>0</forkCount>
                   <systemProperties>
