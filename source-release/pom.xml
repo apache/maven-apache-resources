@@ -23,7 +23,7 @@ under the License.
   <parent>
     <groupId>org.apache.apache.resources</groupId>
     <artifactId>apache-resource-bundles</artifactId>
-    <version>1.7-SNAPSHOT</version>
+    <version>1.7</version>
   </parent>
 
   <artifactId>apache-source-release-assembly-descriptor</artifactId>
