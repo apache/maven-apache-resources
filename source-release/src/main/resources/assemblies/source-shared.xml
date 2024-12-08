@@ -74,6 +74,12 @@
 
         <!-- flatten-maven-plugin -->
         <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.flattened-pom\.xml]</exclude>
+
+        <!-- binary archives -->
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?[^/]*\.zip]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?[^/]*\.jar]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?[^/]*\.tar]</exclude>
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?[^/]*\.tar.gz]</exclude>
       </excludes>
     </fileSet>
     <!-- license, readme, etc. calculated at build time -->

@@ -68,6 +68,10 @@ public class IT_001_ExcludeBuildOutputDirectory {
         banned.add(archivePathFromProject(BASENAME, VERSION, "/target/"));
         banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/target/"));
         banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/target/"));
+        String childPath = "/target/";
+
+        String archivePathFromChild = ( BASENAME + "-" + VERSION + "/" + BASENAME + "-" + "empty.jar" + childPath );
+        banned.add( archivePathFromChild );
 
         assertZipContents(required, banned, assembly);
     }
