@@ -57,6 +57,7 @@ public class IT_004_IdeExcludes {
 
         Set<String> banned = new HashSet<>();
 
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/.empty.jar"));
         banned.add(archivePathFromProject(BASENAME, VERSION, "/.classpath"));
         banned.add(archivePathFromProject(BASENAME, VERSION, "/.project"));
         banned.add(archivePathFromProject(BASENAME, VERSION, "/maven-eclipse.xml"));
