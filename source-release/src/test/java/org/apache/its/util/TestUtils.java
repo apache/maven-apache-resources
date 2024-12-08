@@ -95,20 +95,13 @@ public class TestUtils {
             throws ZipException, IOException {
         assertTrue("Assembly archive missing: " + assembly, assembly.isFile());
 
-        ZipFile zf = null;
-        try {
-            zf = new ZipFile(assembly);
-
+        try (ZipFile zf = new ZipFile(assembly)) {
             LinkedHashSet<String> pathSet = new LinkedHashSet<>();
 
             for (Enumeration<? extends ZipEntry> enumeration = zf.entries(); enumeration.hasMoreElements(); ) {
                 pathSet.add(enumeration.nextElement().getName());
             }
             assertArchiveContents(required, banned, assembly.getAbsolutePath(), pathSet);
-        } finally {
-            if (zf != null) {
-                zf.close();
-            }
         }
     }
 
