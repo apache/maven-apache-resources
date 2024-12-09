@@ -52,8 +52,8 @@
     <url>https://github.com/apache/maven-apache-resources/tree/${project.scm.tag}</url>
   </scm>
   <issueManagement>
-    <system>jira</system>
-    <url>https://issues.apache.org/jira/browse/MASFRES</url>
+    <system>GitHub</system>
+    <url>https://github.com/apache/maven-apache-resources/issues</url>
   </issueManagement>
   <ciManagement>
     <system>Jenkins</system>
