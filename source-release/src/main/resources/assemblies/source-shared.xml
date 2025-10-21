@@ -65,6 +65,9 @@
         <!-- misc -->
         <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?cobertura\.ser]</exclude>
 
+        <!-- develocity-maven-extension working files -->
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.mvn/\.develocity(/.*)?]</exclude>
+
         <!-- release-plugin temp files -->
         <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?pom\.xml\.releaseBackup]</exclude>
         <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?release\.properties]</exclude>
