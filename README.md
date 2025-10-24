@@ -19,6 +19,7 @@ Contributing to [Apache Software Foundation Resource Bundles](https://maven.apac
 
 [![Apache License, Version 2.0, January 2004](https://img.shields.io/github/license/apache/maven.svg?label=License)][license]
 [![Maven Central](https://img.shields.io/maven-central/v/org.apache.apache.resources/apache-resource-bundles.svg?label=Maven%20Central&versionPrefix=1)](https://search.maven.org/artifact/org.apache.apache.resources/apache-resource-bundles)
+[![Reproducible Builds](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/jvm-repo-rebuild/reproducible-central/master/content/org/apache/apache/resources/badge.json)](https://github.com/jvm-repo-rebuild/reproducible-central/blob/master/content/org/apache/apache/resources/README.md)
 [![Jenkins Status](https://img.shields.io/jenkins/s/https/ci-maven.apache.org/job/Maven/job/maven-box/job/maven-apache-parent/job/master.svg)][build]
 
 Have you found a bug or have an idea for a cool new feature? Contributing
