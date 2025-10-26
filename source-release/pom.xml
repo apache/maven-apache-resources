@@ -41,7 +41,7 @@ under the License.
     <!-- The (possibly instrumented copy of the) Maven distribution we actually use for the tests. -->
     <preparedMavenHome>${mavenHome}</preparedMavenHome>
     <!-- the version of maven-assembly-plugin to use in ITs -->
-    <assemblyPluginVersion>2.6</assemblyPluginVersion>
+    <assemblyPluginVersion>3.7.1</assemblyPluginVersion>
   </properties>
 
   <dependencies>
