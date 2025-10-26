@@ -34,9 +34,9 @@ import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
 
-public class IT_003_SharedResourceInclusion {
+public class IT002IncludeSrcDirWithBuildOutputDirName {
 
-    private static final String BASENAME = "shared-resources";
+    private static final String BASENAME = "src-contains-output-dir-name";
     private static final String VERSION = "1";
 
     @Test
@@ -55,19 +55,18 @@ public class IT_003_SharedResourceInclusion {
         Set<String> required = new HashSet<>();
 
         required.add(archivePathFromProject(BASENAME, VERSION, "/pom.xml"));
-        required.add(archivePathFromProject(BASENAME, VERSION, "/LICENSE"));
-        required.add(archivePathFromProject(BASENAME, VERSION, "/DEPENDENCIES"));
-        required.add(archivePathFromProject(BASENAME, VERSION, "/NOTICE"));
+        required.add(archivePathFromChild(BASENAME, VERSION, "child1", "/pom.xml"));
+        required.add(archivePathFromChild(BASENAME, VERSION, "child2", "/pom.xml"));
+
+        required.add(archivePathFromProject(BASENAME, VERSION, "/src/main/resources/target/test.txt"));
+        required.add(archivePathFromChild(BASENAME, VERSION, "child1", "/src/main/java/target/App.java"));
+        required.add(archivePathFromChild(BASENAME, VERSION, "child2", "/src/main/java/target/App.java"));
 
         Set<String> banned = new HashSet<>();
 
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/LICENSE"));
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/DEPENDENCIES"));
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/NOTICE"));
-
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/LICENSE"));
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/DEPENDENCIES"));
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/NOTICE"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/target/"));
+        banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/target/"));
+        banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/target/"));
 
         assertZipContents(required, banned, assembly);
     }

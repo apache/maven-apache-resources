@@ -21,6 +21,7 @@ package org.apache.its;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,15 +29,14 @@ import org.apache.maven.it.VerificationException;
 import org.apache.maven.it.Verifier;
 import org.junit.Test;
 
-import static org.apache.its.util.TestUtils.archivePathFromChild;
 import static org.apache.its.util.TestUtils.archivePathFromProject;
 import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
 
-public class IT_ExcludeSrcDirWithinBuildOutputDir {
+public class IT006CiExcludes {
 
-    private static final String BASENAME = "output-dir-contains-src-name";
+    private static final String BASENAME = "ci-excludes";
     private static final String VERSION = "1";
 
     @Test
@@ -52,30 +52,15 @@ public class IT_ExcludeSrcDirWithinBuildOutputDir {
 
         File assembly = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
 
-        Set<String> required = new HashSet<>();
-
-        required.add(archivePathFromProject(BASENAME, VERSION, "/pom.xml"));
-        required.add(archivePathFromChild(BASENAME, VERSION, "child1", "/pom.xml"));
-        required.add(archivePathFromChild(BASENAME, VERSION, "child2", "/pom.xml"));
-
-        required.add(archivePathFromProject(
-                BASENAME, VERSION, "/src/test/resources/project/src/main/resources/test.properties"));
-        required.add(archivePathFromChild(
-                BASENAME, VERSION, "child1", "/src/test/resources/project/src/main/resources/test.properties"));
-        required.add(archivePathFromChild(
-                BASENAME, VERSION, "child2", "/src/test/resources/project/src/main/resources/test.properties"));
+        Set<String> required = Collections.emptySet();
 
         Set<String> banned = new HashSet<>();
 
-        banned.add(archivePathFromProject(BASENAME, VERSION, "/target/"));
-        banned.add(archivePathFromProject(
-                BASENAME, VERSION, "/target/test-classes/project/src/main/resources/test.properties"));
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/target/"));
-        banned.add(archivePathFromChild(
-                BASENAME, VERSION, "child1", "/target/test-classes/project/src/main/resources/test.properties"));
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/target/"));
-        banned.add(archivePathFromChild(
-                BASENAME, VERSION, "child2", "/target/test-classes/project/src/main/resources/test.properties"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/.github"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/Jenkinsfile"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/.asf.yaml"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/.travis.yml"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/deploySite.sh"));
 
         assertZipContents(required, banned, assembly);
     }

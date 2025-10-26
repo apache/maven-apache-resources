@@ -34,7 +34,7 @@ import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
 
-public class IT_IncludeIdeFilesWithinSrcDir {
+public class ITIncludeIdeFilesWithinSrcDir {
 
     private static final String BASENAME = "src-contains-ide-files";
     private static final String VERSION = "1";
