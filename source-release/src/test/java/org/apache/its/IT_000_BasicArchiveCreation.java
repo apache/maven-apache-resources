@@ -25,7 +25,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import junit.framework.Assert;
 import org.apache.maven.it.VerificationException;
 import org.apache.maven.it.Verifier;
 import org.junit.Test;
@@ -35,6 +34,7 @@ import static org.apache.its.util.TestUtils.archivePathFromProject;
 import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class IT_000_BasicArchiveCreation {
 
@@ -53,7 +53,7 @@ public class IT_000_BasicArchiveCreation {
 
         // make sure the tar did NOT get created by default
         File tarAssemblyFile = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.tar.gz");
-        Assert.assertFalse("tar assembly should not have been created", tarAssemblyFile.exists());
+        assertFalse(tarAssemblyFile.exists(), "tar assembly should not have been created");
 
         File assembly = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
 

@@ -36,8 +36,8 @@ import org.apache.maven.it.VerificationException;
 import org.apache.maven.it.Verifier;
 import org.codehaus.plexus.archiver.tar.GZipTarFile;
 
-import static junit.framework.Assert.assertTrue;
-import static junit.framework.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class TestUtils {
 
@@ -71,7 +71,7 @@ public class TestUtils {
     }
 
     public static void assertTarContents(Set<String> required, Set<String> banned, File assembly) throws IOException {
-        assertTrue("Assembly archive missing: " + assembly, assembly.isFile());
+        assertTrue(assembly.isFile(), "Assembly archive missing: " + assembly);
 
         GZipTarFile tarFile = null;
         try {
@@ -93,7 +93,7 @@ public class TestUtils {
 
     public static void assertZipContents(Set<String> required, Set<String> banned, File assembly)
             throws ZipException, IOException {
-        assertTrue("Assembly archive missing: " + assembly, assembly.isFile());
+        assertTrue(assembly.isFile(), "Assembly archive missing: " + assembly);
 
         try (ZipFile zf = new ZipFile(assembly)) {
             LinkedHashSet<String> pathSet = new LinkedHashSet<>();
