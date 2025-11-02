@@ -25,9 +25,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.maven.it.VerificationException;
-import org.apache.maven.it.Verifier;
-import org.junit.Test;
+import org.apache.maven.shared.verifier.VerificationException;
+import org.apache.maven.shared.verifier.Verifier;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromChild;
 import static org.apache.its.util.TestUtils.archivePathFromProject;
@@ -35,7 +35,7 @@ import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
 
-public class IT_004_IdeExcludes {
+public class IdeExcludesTest {
 
     private static final String BASENAME = "ide-excludes";
     private static final String VERSION = "1";

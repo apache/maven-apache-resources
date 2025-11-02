@@ -24,9 +24,9 @@ import java.net.URISyntaxException;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.maven.it.VerificationException;
-import org.apache.maven.it.Verifier;
-import org.junit.Test;
+import org.apache.maven.shared.verifier.VerificationException;
+import org.apache.maven.shared.verifier.Verifier;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromChild;
 import static org.apache.its.util.TestUtils.archivePathFromProject;
@@ -34,9 +34,9 @@ import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
 
-public class IT_001_ExcludeBuildOutputDirectory {
+public class IncludeSrcDirWithBuildOutputDirNameTest {
 
-    private static final String BASENAME = "build-output-dir";
+    private static final String BASENAME = "src-contains-output-dir-name";
     private static final String VERSION = "1";
 
     @Test
@@ -55,13 +55,12 @@ public class IT_001_ExcludeBuildOutputDirectory {
         Set<String> required = new HashSet<>();
 
         required.add(archivePathFromProject(BASENAME, VERSION, "/pom.xml"));
-        required.add(archivePathFromChild(BASENAME, VERSION, "child1", "pom.xml"));
+        required.add(archivePathFromChild(BASENAME, VERSION, "child1", "/pom.xml"));
         required.add(archivePathFromChild(BASENAME, VERSION, "child2", "/pom.xml"));
 
-        required.add(
-                archivePathFromChild(BASENAME, VERSION, "child1", "/src/main/java/org/apache/assembly/it/App.java"));
-        required.add(
-                archivePathFromChild(BASENAME, VERSION, "child2", "/src/main/java/org/apache/assembly/it/App.java"));
+        required.add(archivePathFromProject(BASENAME, VERSION, "/src/main/resources/target/test.txt"));
+        required.add(archivePathFromChild(BASENAME, VERSION, "child1", "/src/main/java/target/App.java"));
+        required.add(archivePathFromChild(BASENAME, VERSION, "child2", "/src/main/java/target/App.java"));
 
         Set<String> banned = new HashSet<>();
 

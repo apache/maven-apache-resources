@@ -25,16 +25,16 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.maven.it.VerificationException;
-import org.apache.maven.it.Verifier;
-import org.junit.Test;
+import org.apache.maven.shared.verifier.VerificationException;
+import org.apache.maven.shared.verifier.Verifier;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromProject;
 import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
 
-public class IT_006_CiExcludes {
+public class CiExcludesTest {
 
     private static final String BASENAME = "ci-excludes";
     private static final String VERSION = "1";
@@ -45,10 +45,10 @@ public class IT_006_CiExcludes {
 
         Verifier verifier = createVerifier(testDir);
 
-        verifier.executeGoal("package");
+        verifier.addCliArgument("package");
+        verifier.execute();
 
         verifier.verifyErrorFreeLog();
-        verifier.resetStreams();
 
         File assembly = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
 

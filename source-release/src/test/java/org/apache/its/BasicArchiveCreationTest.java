@@ -25,21 +25,20 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import junit.framework.Assert;
-import org.apache.maven.it.VerificationException;
-import org.apache.maven.it.Verifier;
-import org.junit.Test;
+import org.apache.maven.shared.verifier.VerificationException;
+import org.apache.maven.shared.verifier.Verifier;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromChild;
 import static org.apache.its.util.TestUtils.archivePathFromProject;
-import static org.apache.its.util.TestUtils.assertTarContents;
 import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class IT_ZipAndTarCreation {
+public class BasicArchiveCreationTest {
 
-    private static final String BASENAME = "zip-and-tar";
+    private static final String BASENAME = "basics";
     private static final String VERSION = "1";
 
     @Test
@@ -47,17 +46,16 @@ public class IT_ZipAndTarCreation {
         File testDir = getTestDir(BASENAME);
 
         Verifier verifier = createVerifier(testDir);
-
-        verifier.executeGoal("package");
+        verifier.addCliArgument("package");
+        verifier.execute();
 
         verifier.verifyErrorFreeLog();
-        verifier.resetStreams();
 
+        // make sure the tar did NOT get created by default
         File tarAssemblyFile = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.tar.gz");
-        Assert.assertTrue("tar assembly should  have been created", tarAssemblyFile.exists());
+        assertFalse(tarAssemblyFile.exists(), "tar assembly should not have been created");
 
-        File zipAssemblyFile = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
-        Assert.assertTrue("zip assembly should  have been created", zipAssemblyFile.exists());
+        File assembly = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
 
         Set<String> required = new HashSet<>();
 
@@ -75,7 +73,6 @@ public class IT_ZipAndTarCreation {
 
         Set<String> banned = Collections.emptySet();
 
-        assertZipContents(required, banned, zipAssemblyFile);
-        assertTarContents(required, banned, tarAssemblyFile);
+        assertZipContents(required, banned, assembly);
     }
 }

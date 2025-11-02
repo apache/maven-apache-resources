@@ -28,16 +28,15 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
-import org.apache.maven.it.VerificationException;
-import org.apache.maven.it.Verifier;
+import org.apache.maven.shared.verifier.VerificationException;
+import org.apache.maven.shared.verifier.Verifier;
 import org.codehaus.plexus.archiver.tar.GZipTarFile;
 
-import static junit.framework.Assert.assertTrue;
-import static junit.framework.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class TestUtils {
 
@@ -71,7 +70,7 @@ public class TestUtils {
     }
 
     public static void assertTarContents(Set<String> required, Set<String> banned, File assembly) throws IOException {
-        assertTrue("Assembly archive missing: " + assembly, assembly.isFile());
+        assertTrue(assembly.isFile(), "Assembly archive missing: " + assembly);
 
         GZipTarFile tarFile = null;
         try {
@@ -79,8 +78,7 @@ public class TestUtils {
 
             LinkedHashSet<String> pathSet = new LinkedHashSet<>();
 
-            for (@SuppressWarnings("unchecked") Enumeration<ArchiveEntry> enumeration = tarFile.getEntries();
-                    enumeration.hasMoreElements(); ) {
+            for (Enumeration<ArchiveEntry> enumeration = tarFile.getEntries(); enumeration.hasMoreElements(); ) {
                 pathSet.add(enumeration.nextElement().getName());
             }
             assertArchiveContents(required, banned, assembly.getAbsolutePath(), pathSet);
@@ -91,9 +89,8 @@ public class TestUtils {
         }
     }
 
-    public static void assertZipContents(Set<String> required, Set<String> banned, File assembly)
-            throws ZipException, IOException {
-        assertTrue("Assembly archive missing: " + assembly, assembly.isFile());
+    public static void assertZipContents(Set<String> required, Set<String> banned, File assembly) throws IOException {
+        assertTrue(assembly.isFile(), "Assembly archive missing: " + assembly);
 
         try (ZipFile zf = new ZipFile(assembly)) {
             LinkedHashSet<String> pathSet = new LinkedHashSet<>();
@@ -123,7 +120,7 @@ public class TestUtils {
         }
 
         if (!missing.isEmpty() || !banViolations.isEmpty()) {
-            StringBuffer msg = new StringBuffer();
+            StringBuilder msg = new StringBuilder();
             msg.append("The following errors were found in:\n\n");
             msg.append(assemblyName);
             msg.append("\n");
@@ -157,9 +154,7 @@ public class TestUtils {
     }
 
     public static File getTestDir(String name) throws IOException, URISyntaxException {
-        ClassLoader cloader = Thread.currentThread().getContextClassLoader();
-        URL resource = cloader.getResource("maven-projects/" + name);
-
+        URL resource = Thread.currentThread().getContextClassLoader().getResource("maven-projects/" + name);
         if (resource == null) {
             throw new IOException("Cannot find test directory: " + name);
         }

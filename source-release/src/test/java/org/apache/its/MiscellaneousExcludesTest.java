@@ -24,9 +24,9 @@ import java.net.URISyntaxException;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.maven.it.VerificationException;
-import org.apache.maven.it.Verifier;
-import org.junit.Test;
+import org.apache.maven.shared.verifier.VerificationException;
+import org.apache.maven.shared.verifier.Verifier;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromChild;
 import static org.apache.its.util.TestUtils.archivePathFromProject;
@@ -34,9 +34,9 @@ import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
 
-public class IT_003_SharedResourceInclusion {
+public class MiscellaneousExcludesTest {
 
-    private static final String BASENAME = "shared-resources";
+    private static final String BASENAME = "misc-excludes";
     private static final String VERSION = "1";
 
     @Test
@@ -54,21 +54,17 @@ public class IT_003_SharedResourceInclusion {
 
         Set<String> required = new HashSet<>();
 
-        required.add(archivePathFromProject(BASENAME, VERSION, "/pom.xml"));
-        required.add(archivePathFromProject(BASENAME, VERSION, "/LICENSE"));
-        required.add(archivePathFromProject(BASENAME, VERSION, "/DEPENDENCIES"));
-        required.add(archivePathFromProject(BASENAME, VERSION, "/NOTICE"));
-
         Set<String> banned = new HashSet<>();
 
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/LICENSE"));
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/DEPENDENCIES"));
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/NOTICE"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/cobertura.ser"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/release.properties"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/pom.xml.releaseBackup"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/dependency-reduced-pom.xml"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/.flattened-pom.xml"));
 
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/LICENSE"));
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/DEPENDENCIES"));
-        banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/NOTICE"));
+        banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/cobertura.ser"));
 
+        required.add(archivePathFromProject(BASENAME, VERSION, "/some-target.txt"));
         assertZipContents(required, banned, assembly);
     }
 }
