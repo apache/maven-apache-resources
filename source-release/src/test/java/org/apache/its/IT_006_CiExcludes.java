@@ -27,7 +27,7 @@ import java.util.Set;
 
 import org.apache.maven.it.VerificationException;
 import org.apache.maven.it.Verifier;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromProject;
 import static org.apache.its.util.TestUtils.assertZipContents;
