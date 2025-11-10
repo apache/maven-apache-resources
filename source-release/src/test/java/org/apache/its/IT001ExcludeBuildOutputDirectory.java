@@ -24,9 +24,9 @@ import java.net.URISyntaxException;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.maven.it.VerificationException;
-import org.apache.maven.it.Verifier;
-import org.junit.Test;
+import org.apache.maven.shared.verifier.VerificationException;
+import org.apache.maven.shared.verifier.Verifier;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromChild;
 import static org.apache.its.util.TestUtils.archivePathFromProject;
@@ -45,10 +45,10 @@ public class IT001ExcludeBuildOutputDirectory {
 
         Verifier verifier = createVerifier(testDir);
 
-        verifier.executeGoal("package");
+        verifier.addCliArgument("package");
+        verifier.execute();
 
         verifier.verifyErrorFreeLog();
-        verifier.resetStreams();
 
         File assembly = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
 

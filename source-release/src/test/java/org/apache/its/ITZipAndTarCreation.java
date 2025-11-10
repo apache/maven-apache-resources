@@ -21,14 +21,14 @@ package org.apache.its;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import junit.framework.Assert;
-import org.apache.maven.it.VerificationException;
-import org.apache.maven.it.Verifier;
-import org.junit.Test;
+import org.apache.maven.shared.verifier.VerificationException;
+import org.apache.maven.shared.verifier.Verifier;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromChild;
 import static org.apache.its.util.TestUtils.archivePathFromProject;
@@ -36,6 +36,7 @@ import static org.apache.its.util.TestUtils.assertTarContents;
 import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ITZipAndTarCreation {
 
@@ -47,17 +48,20 @@ public class ITZipAndTarCreation {
         File testDir = getTestDir(BASENAME);
 
         Verifier verifier = createVerifier(testDir);
+        // to avoid saving logs in current project dir
+        Files.createDirectories(testDir.toPath().resolve("target"));
+        verifier.setLogFileName("target/log.txt");
 
-        verifier.executeGoal("package");
+        verifier.addCliArgument("package");
+        verifier.execute();
 
         verifier.verifyErrorFreeLog();
-        verifier.resetStreams();
 
         File tarAssemblyFile = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.tar.gz");
-        Assert.assertTrue("tar assembly should  have been created", tarAssemblyFile.exists());
+        assertTrue(tarAssemblyFile.exists(), "tar assembly should  have been created");
 
         File zipAssemblyFile = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
-        Assert.assertTrue("zip assembly should  have been created", zipAssemblyFile.exists());
+        assertTrue(zipAssemblyFile.exists(), "zip assembly should  have been created");
 
         Set<String> required = new HashSet<>();
 
