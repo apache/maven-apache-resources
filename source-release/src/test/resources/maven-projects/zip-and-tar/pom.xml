@@ -32,17 +32,17 @@ under the License.
     <module>zip-and-tar-child1</module>
     <module>zip-and-tar-child2</module>
   </modules>
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  
+
   <build>
     <plugins>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>@assemblyPluginVersion@</version>
-        
+
         <dependencies>
           <dependency>
             <groupId>org.apache.apache.resources</groupId>
@@ -50,7 +50,7 @@ under the License.
             <version>@project.version@</version>
           </dependency>
         </dependencies>
-        
+
         <executions>
           <execution>
             <id>source-release-assembly</id>
@@ -70,10 +70,10 @@ under the License.
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
+        <version>3.14.1</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>8</source>
+          <target>8</target>
         </configuration>
       </plugin>
     </plugins>

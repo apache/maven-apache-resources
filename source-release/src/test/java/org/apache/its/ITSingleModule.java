@@ -24,15 +24,15 @@ import java.net.URISyntaxException;
 import java.util.HashSet;
 import java.util.Set;
 
-import junit.framework.Assert;
-import org.apache.maven.it.VerificationException;
-import org.apache.maven.it.Verifier;
-import org.junit.Test;
+import org.apache.maven.shared.verifier.VerificationException;
+import org.apache.maven.shared.verifier.Verifier;
+import org.junit.jupiter.api.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromProject;
 import static org.apache.its.util.TestUtils.assertZipContents;
 import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ITSingleModule {
 
@@ -45,13 +45,13 @@ public class ITSingleModule {
 
         Verifier verifier = createVerifier(testDir);
 
-        verifier.executeGoal("package");
+        verifier.addCliArgument("package");
+        verifier.execute();
 
         verifier.verifyErrorFreeLog();
-        verifier.resetStreams();
 
         File zipAssemblyFile = new File(testDir, "target/" + BASENAME + "-" + VERSION + "-source-release.zip");
-        Assert.assertTrue("zip assembly should  have been created", zipAssemblyFile.exists());
+        assertTrue(zipAssemblyFile.exists(), "zip assembly should  have been created");
 
         Set<String> required = new HashSet<>();
 
