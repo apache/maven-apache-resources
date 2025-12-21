@@ -19,13 +19,10 @@
 package org.apache.its;
 
 import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.maven.shared.verifier.VerificationException;
 import org.apache.maven.shared.verifier.Verifier;
 import org.junit.jupiter.api.Test;
 
@@ -36,13 +33,13 @@ import static org.apache.its.util.TestUtils.createVerifier;
 import static org.apache.its.util.TestUtils.getTestDir;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class IT000BasicArchiveCreation {
+class IT000BasicArchiveCreation {
 
     private static final String BASENAME = "basics";
     private static final String VERSION = "1";
 
     @Test
-    public void execute() throws VerificationException, IOException, URISyntaxException {
+    void execute() throws Exception {
         File testDir = getTestDir(BASENAME);
 
         Verifier verifier = createVerifier(testDir);
