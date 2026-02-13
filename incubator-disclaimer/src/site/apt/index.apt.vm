@@ -28,7 +28,7 @@
 
 ${project.name}
  
-  To generate <<<META-INF/DISLAIMER>>> content in your jar, 
+  To generate <<<META-INF/DISCLAIMER>>> content in your jar, 
   configure <<<maven-remote-resources-plugin>>>:
 
 +-----+
@@ -51,4 +51,4 @@ ${project.name}
       </plugin>
 +-----+
 
-  Content is generated from your project dependencies with {{{${project.scm.url}/src/main/resources/META-INF/DISLAIMER.vm}<<<DISLAIMER.vm>>>}} Velocity template.
+  Content is generated from your project dependencies with {{{${project.scm.url}/src/main/resources/META-INF/DISCLAIMER.vm}<<<DISCLAIMER.vm>>>}} Velocity template.
