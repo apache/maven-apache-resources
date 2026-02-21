@@ -29,7 +29,7 @@
 
   <groupId>org.apache.apache.resources</groupId>
   <artifactId>apache-resource-bundles</artifactId>
-  <version>1.8</version>
+  <version>1.9-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Apache Resource Bundles</name>
@@ -68,7 +68,7 @@
 
   <properties>
     <maven.site.path>apache-resource-bundles-archives/apache-resource-bundles-LATEST</maven.site.path>
-    <project.build.outputTimestamp>2026-02-21T09:54:31Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2026-02-21T09:54:53Z</project.build.outputTimestamp>
   </properties>
 
   <build>
