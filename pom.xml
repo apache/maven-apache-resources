@@ -69,9 +69,26 @@
   <properties>
     <maven.site.path>apache-resource-bundles-archives/apache-resource-bundles-LATEST</maven.site.path>
     <project.build.outputTimestamp>2026-02-21T09:54:53Z</project.build.outputTimestamp>
+    <version.njord>0.9.4</version.njord>
   </properties>
 
   <build>
+    <extensions>
+      <extension>
+        <groupId>eu.maveniverse.maven.njord</groupId>
+        <artifactId>extension3</artifactId>
+        <version>${version.njord}</version>
+      </extension>
+    </extensions>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>eu.maveniverse.maven.plugins</groupId>
+          <artifactId>njord</artifactId>
+          <version>${version.njord}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <!-- Turn this into a lifecycle -->
       <plugin>
@@ -86,4 +103,70 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>atr-upload</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.2.0</version>
+            <executions>
+              <execution>
+                <id>atr-upload-apache-distribution</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target>
+                    <apply executable="du"><!-- TODO replace with ATR /api/release/upload https://release-test.apache.org/api/docs#/default/post_release_upload
+                                                or equivalent atr upload https://github.com/apache/tooling-releases-client/blob/main/COMMANDS.md#atr-upload
+                                                or yet to be developed atr-maven-plugin:release-upload
+                                           -->
+                      <arg value="-h"/>
+                      <fileset dir="target" includes="${artifactId}-${version}-source-release.*"/>
+                    </apply>
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>njord</id>
+      <properties>
+        <altDeploymentRepository>id::njord:</altDeploymentRepository>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.2.0</version>
+            <executions>
+              <execution>
+                <id>atr-upload-maven-central-bundle</id><!-- deploy the njord bundle zip file -->
+                <phase>deploy</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target>
+                    <apply executable="ls">
+                      <arg value="-l"/>
+                      <fileset dir="target" includes="${artifactId}-${version}-source-release.*"/>
+                    </apply>
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+ 
 </project>
