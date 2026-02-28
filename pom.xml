@@ -17,6 +17,19 @@
   ~ specific language governing permissions and limitations
   ~ under the License.
   -->
+
+<!--
+  Test instructions:
+  - normal usual command run during release 'mvn release:perform': mvn deploy -Papache-release
+  - 1st enhancement here: upload the Apache distribution files to ATR = add the atr-upload profile
+      mvn deploy -Papache-release -Patr-upload
+  - 2nd enhancement: don't use repository.apache.org staging, but prepare a njord bundle zip file for ATR, and ATR will trigger later publish to Maven Central
+      mvn deploy -Papache-release -Pnjord
+    as of now, preparing the njord bundle zip file during "mvn deploy" is not ready yet
+    it has to be run in a separate mvn invocation with store id chosen by human:
+      mvn -N -Pnjord njord:write-bundle -Dnjord.store=apache-resource-bundles-00003 -Dnjord.directory=target
+    but it shows the concepts
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -106,7 +119,9 @@
 
   <profiles>
     <profile>
-      <id>atr-upload</id>
+      <id>atr-upload</id><!-- small improvement to release 1.8 done: upload Apache Distribution files to ATR during mvn invocation, instead of manual ATR UI upload
+                              not critical, but one step forward
+                          -->
       <build>
         <plugins>
           <plugin>
@@ -137,18 +152,38 @@
       </build>
     </profile>
     <profile>
-      <id>njord</id>
+      <id>njord</id><!-- next big change: do not use repository.apache.org staging any more
+                         but prepare a njord bundle zip file for ATR to stage, vote, publish to Maven Central -->
       <properties>
         <altDeploymentRepository>id::njord:</altDeploymentRepository>
       </properties>
       <build>
         <plugins>
           <plugin>
+            <groupId>eu.maveniverse.maven.plugins</groupId>
+            <artifactId>njord</artifactId>
+            <executions>
+              <execution>
+                <id>create-bundle-zip</id><!-- create the njord bundle zip file
+                                                like: mvn -N -Pnjord njord:write-bundle -Dnjord.store=apache-resource-bundles-00003 -Dnjord.directory=target
+                                                but bound to the initial "mvn deploy" invocation
+                                            -->
+                <phase>deploy</phase>
+                <goals>
+                  <goal>list</goal> <!-- TBD: what should be the goal to export the current njord store to a bundle zip file? -->
+                </goals>
+                <configuration>
+                  <path>njord-out</path>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
             <artifactId>maven-antrun-plugin</artifactId>
             <version>3.2.0</version>
             <executions>
               <execution>
-                <id>atr-upload-maven-central-bundle</id><!-- deploy the njord bundle zip file -->
+                <id>atr-upload-maven-central-bundle</id><!-- upload to ATR the njord bundle zip file -->
                 <phase>deploy</phase>
                 <goals>
                   <goal>run</goal>
@@ -157,7 +192,7 @@
                   <target>
                     <apply executable="ls">
                       <arg value="-l"/>
-                      <fileset dir="target" includes="${artifactId}-${version}-source-release.*"/>
+                      <fileset dir="target" includes="${project.artifactId}-${project.version}-source-release.*"/>
                     </apply>
                   </target>
                 </configuration>
