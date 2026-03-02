@@ -25,9 +25,9 @@
       mvn deploy -Papache-release -Patr-upload
   - 2nd enhancement: don't use repository.apache.org staging, but prepare a njord bundle zip file for ATR, and ATR will trigger later publish to Maven Central
       mvn deploy -Papache-release -Pnjord
-    as of now, preparing the njord bundle zip file during "mvn deploy" is not ready yet
+    as of now, preparing the njord transportable bundle .ntb file during "mvn deploy" is not ready yet
     it has to be run in a separate mvn invocation with store id chosen by human:
-      mvn -N -Pnjord njord:write-bundle -Dnjord.store=apache-resource-bundles-00003 -Dnjord.directory=target
+      mvn -N -Pnjord njord:export -Dnjord.store=apache-resource-bundles-00003 -Dnjord.path=target
     but it shows the concepts
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
