@@ -40,8 +40,6 @@ under the License.
     <mavenHome>${maven.home}</mavenHome>
     <!-- The (possibly instrumented copy of the) Maven distribution we actually use for the tests. -->
     <preparedMavenHome>${mavenHome}</preparedMavenHome>
-    <!-- the version of maven-assembly-plugin to use in ITs -->
-    <assemblyPluginVersion>${version.maven-assembly-plugin}</assemblyPluginVersion>
   </properties>
 
   <dependencies>
