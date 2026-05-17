@@ -58,7 +58,7 @@ under the License.
       
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>@assemblyPluginVersion@</version>
+        <version>@version.maven-assembly-plugin@</version>
         
         <dependencies>
           <dependency>
@@ -86,7 +86,7 @@ under the License.
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
+        <version>@version.maven-compiler-plugin@</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
