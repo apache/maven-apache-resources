@@ -18,6 +18,5 @@
 # under the License.
 
 _extends: maven-gh-actions-shared
+tag-template: apache-resource-bundles-$RESOLVED_VERSION
 version-template: $MAJOR.$MINOR
-name-template: $NEXT_MINOR_VERSION
-tag-template: apache-resource-bundles-$NEXT_MINOR_VERSION
