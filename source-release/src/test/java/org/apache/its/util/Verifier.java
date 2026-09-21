@@ -73,8 +73,9 @@ public class Verifier {
         arguments.add("clean");
         arguments.addAll(cliArguments);
 
+        // forked on purpose: embedding Maven 4 inside the test JVM hangs (apache/maven-executor#47)
         try (ExecutorHelper executorHelper =
-                ExecutorHelper.forMavenInstallation(new File(mavenHomeProperty).toPath(), ExecutorHelper.Mode.AUTO)) {
+                ExecutorHelper.forMavenInstallation(new File(mavenHomeProperty).toPath(), ExecutorHelper.Mode.FORKED)) {
             ExecutorRequest request = ExecutorRequest.mavenBuilder()
                     .cwd(basedir.toPath())
                     .arguments(arguments.toArray(new String[0]))
