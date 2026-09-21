@@ -19,7 +19,6 @@
 package org.apache.its;
 
 import java.io.File;
-import java.nio.file.Files;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -45,9 +44,9 @@ class ITZipAndTarCreation {
         File testDir = getTestDir(BASENAME);
 
         Verifier verifier = createVerifier(testDir);
-        // to avoid saving logs in current project dir
-        Files.createDirectories(testDir.toPath().resolve("target"));
-        verifier.setLogFileName("target/log.txt");
+        // keep the log out of the project, so it is neither packaged nor deleted by the clean that
+        // precedes the build (Maven 4 on Windows holds its log file open and the delete fails)
+        verifier.setLogFileName("../" + BASENAME + "-log.txt");
 
         verifier.addCliArgument("package");
         verifier.execute();
