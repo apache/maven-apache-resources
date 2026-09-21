@@ -101,6 +101,7 @@ under the License.
               <exclude>src/test/resources/**/.*.yaml</exclude>
               <exclude>src/test/resources/**/Jenkinsfile</exclude>
               <exclude>src/test/resources/**/*.sh</exclude>
+              <exclude>src/test/resources/**/.tokensave/**</exclude>
             </excludes>
           </configuration>
         </plugin>

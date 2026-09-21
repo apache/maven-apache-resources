@@ -65,6 +65,9 @@
         <!-- misc -->
         <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?cobertura\.ser]</exclude>
 
+        <!-- tokensave (https://tokensave.dev/) working files -->
+        <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.tokensave(/.*)?]</exclude>
+
         <!-- develocity-maven-extension working files -->
         <exclude>%regex[(?!((?!${project.build.directory}/)[^/]+/)*src/)(.*/)?\.mvn/\.develocity(/.*)?]</exclude>
 
