@@ -22,7 +22,7 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.maven.shared.verifier.Verifier;
+import org.apache.its.util.Verifier;
 import org.junit.jupiter.api.Test;
 
 import static org.apache.its.util.TestUtils.archivePathFromChild;

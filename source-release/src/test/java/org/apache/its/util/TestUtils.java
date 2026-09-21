@@ -31,8 +31,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
-import org.apache.maven.shared.verifier.VerificationException;
-import org.apache.maven.shared.verifier.Verifier;
 import org.codehaus.plexus.archiver.tar.GZipTarFile;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -42,7 +40,7 @@ public class TestUtils {
 
     private static final String IT_REPO_LOCAL = "it.repo.local";
 
-    public static Verifier createVerifier(File testDir) throws VerificationException {
+    public static Verifier createVerifier(File testDir) {
         Verifier verifier = new Verifier(testDir.getAbsolutePath());
         // FIXME: remove using custom local repository instead of leveraging property "maven.repo.local" (workaround for
         // https://issues.apache.org/jira/browse/SUREFIRE-1385)
