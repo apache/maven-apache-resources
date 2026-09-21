@@ -58,6 +58,8 @@ class IT005MiscellaneousExcludes {
         banned.add(archivePathFromProject(BASENAME, VERSION, "/pom.xml.releaseBackup"));
         banned.add(archivePathFromProject(BASENAME, VERSION, "/dependency-reduced-pom.xml"));
         banned.add(archivePathFromProject(BASENAME, VERSION, "/.flattened-pom.xml"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/.tokensave/config.json"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/.tokensave/tokensave.db"));
 
         banned.add(archivePathFromChild(BASENAME, VERSION, "child2", "/cobertura.ser"));
 
