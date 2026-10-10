@@ -15,6 +15,7 @@
 #  limitations under the License.
 #
 # see https://s.apache.org/asfyaml
+
 github:
   description: "Apache Software Foundation Resource Bundles"
   homepage: https://maven.apache.org/apache-resource-bundles/
