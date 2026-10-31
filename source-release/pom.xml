@@ -123,23 +123,13 @@ under the License.
                     <exclude>**/maven-projects/**</exclude>
                   </excludes>
                   <forkCount>0</forkCount>
-                  <systemProperties>
-                    <property>
-                      <name>maven.version</name>
-                      <value>${maven.version}</value>
-                    </property>
-                    <property>
-                      <name>maven.home</name>
-                      <value>${preparedMavenHome}</value>
-                    </property>
+                  <systemPropertyVariables>
+                    <maven.version>${maven.version}</maven.version>
+                    <maven.home>${mavenHome}</maven.home>
                     <!-- cannot use property "maven.repo.local" as already used as user property on the CLI through ASF Jenkins -->
                     <!-- TODO: replace with "maven.repo.local" once https://issues.apache.org/jira/browse/SUREFIRE-1385 is fixed -->
-                    <property>
-                      <!-- Pass this through to the tests (if set!) to have them pick the right repository -->
-                      <name>it.repo.local</name>
-                      <value>${project.build.directory}/it-repo</value>
-                    </property>
-                  </systemProperties>
+                    <it.repo.local>${project.build.directory}/it-repo</it.repo.local>
+                  </systemPropertyVariables>
                 </configuration>
               </execution>
             </executions>

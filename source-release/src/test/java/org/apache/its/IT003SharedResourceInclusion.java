@@ -52,11 +52,12 @@ class IT003SharedResourceInclusion {
         Set<String> required = new HashSet<>();
 
         required.add(archivePathFromProject(BASENAME, VERSION, "/pom.xml"));
-        required.add(archivePathFromProject(BASENAME, VERSION, "/LICENSE"));
-        required.add(archivePathFromProject(BASENAME, VERSION, "/DEPENDENCIES"));
-        required.add(archivePathFromProject(BASENAME, VERSION, "/NOTICE"));
 
         Set<String> banned = new HashSet<>();
+
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/LICENSE"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/DEPENDENCIES"));
+        banned.add(archivePathFromProject(BASENAME, VERSION, "/NOTICE"));
 
         banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/LICENSE"));
         banned.add(archivePathFromChild(BASENAME, VERSION, "child1", "/DEPENDENCIES"));
