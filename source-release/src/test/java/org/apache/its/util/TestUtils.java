@@ -56,7 +56,7 @@ public class TestUtils {
             childPath = "/" + childPath;
         }
 
-        return (artifactId + "-" + version + "/" + artifactId + "-" + childName + childPath);
+        return artifactId + "-" + version + "/" + artifactId + "-" + childName + childPath;
     }
 
     public static String archivePathFromProject(String artifactId, String version, String path) {
@@ -64,7 +64,7 @@ public class TestUtils {
             path = "/" + path;
         }
 
-        return (artifactId + "-" + version + path);
+        return artifactId + "-" + version + path;
     }
 
     public static void assertTarContents(Set<String> required, Set<String> banned, File assembly) throws IOException {
